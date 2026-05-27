@@ -30,6 +30,7 @@
 - Files: src/pages/ui/ProductPageUI.tsx, src/templates/EcommerceTemplate.tsx, src/components/sections/TrapitoRelatedProducts.tsx
 
 ## 4. Recent Changes
+- 2026-05-27 — Updated packaging image in TrapitoPackaging.tsx with user-uploaded real photo
 - 2026-05-27 — Full PDP redesign: Fraunces title, crema/crudo bg, oliva buttons, stars rating
 - 2026-05-27 — Added benefit bullets (OEKO-TEX, bordado a mano, empaque, heredable)
 - 2026-05-27 — Added trust line below CTA (gift, shipping, returns, lock)
@@ -44,13 +45,12 @@
 - 2026-05-27 — Created 3 collections: Rompers de Lino, Sets Kimono, Overoles
 - 2026-05-27 — Built 10 section components in src/components/sections/
 - 2026-05-27 — Rewrote IndexUI.tsx with full Trapito landing page (12 sections)
-- 2026-05-27 — Generated hero-baby.jpg, brand-story.jpg, packaging.jpg (AI)
 
 ## 5. Image Inventory
 - Logo: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/temp_1779899822544_9bb8b9d3/1779899822544-i6kkb5mefds.png
 - Hero baby: /hero-baby.jpg (also Supabase URL)
 - Brand story: /brand-story.jpg
-- Packaging: /packaging.jpg
+- Packaging (REAL PHOTO): https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/2951759c-e79e-4fd2-b408-bf60182e438e/1779907514878-iifo91wm43.webp
 - Cat Rompers: https://...1779899822545-layt2mkpcua.png
 - Cat Kimono: https://...1779899822545-s23vyafcqkb.png
 - Cat Overoles: https://...1779899822545-qk7s7uxc6u.png
