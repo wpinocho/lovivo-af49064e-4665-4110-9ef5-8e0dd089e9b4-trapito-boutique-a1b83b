@@ -25,11 +25,13 @@
 - Copy rules: NEVER em dash; NEVER all-caps except eyebrows; max 2 fonts
 
 ## 3. Active Plan
-### PDP Redesign — completed 2026-05-27
-- Status: done
-- Files: src/pages/ui/ProductPageUI.tsx, src/templates/EcommerceTemplate.tsx, src/components/sections/TrapitoRelatedProducts.tsx
+### Collection Images — completed 2026-05-27
+- Generated 3 editorial flatlay collection images using real product references
+- Updated all 3 collections in DB with new images
 
 ## 4. Recent Changes
+- 2026-05-27 — Generated 3 collection images (flatlay editorial) using product references
+- 2026-05-27 — Updated Rompers de Lino, Sets Kimono, Overoles collections with new images
 - 2026-05-27 — Updated packaging image in TrapitoPackaging.tsx with user-uploaded real photo
 - 2026-05-27 — Full PDP redesign: Fraunces title, crema/crudo bg, oliva buttons, stars rating
 - 2026-05-27 — Added benefit bullets (OEKO-TEX, bordado a mano, empaque, heredable)
@@ -42,27 +44,21 @@
 - 2026-05-27 — Updated EcommerceTemplate: bg-crema header, bg-tinta footer, vino cart badge
 - 2026-05-27 — Full design system (index.css + tailwind.config.ts) with Trapito palette + Fraunces font
 - 2026-05-27 — Created 12 products: 4 rompers, 4 sets kimono, 4 overoles (all with AI-generated images)
-- 2026-05-27 — Created 3 collections: Rompers de Lino, Sets Kimono, Overoles
-- 2026-05-27 — Built 10 section components in src/components/sections/
-- 2026-05-27 — Rewrote IndexUI.tsx with full Trapito landing page (12 sections)
 
 ## 5. Image Inventory
 - Logo: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/temp_1779899822544_9bb8b9d3/1779899822544-i6kkb5mefds.png
 - Hero baby: /hero-baby.jpg (also Supabase URL)
 - Brand story: /brand-story.jpg
 - Packaging (REAL PHOTO): https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/2951759c-e79e-4fd2-b408-bf60182e438e/1779907514878-iifo91wm43.webp
-- Cat Rompers: https://...1779899822545-layt2mkpcua.png
-- Cat Kimono: https://...1779899822545-s23vyafcqkb.png
-- Cat Overoles: https://...1779899822545-qk7s7uxc6u.png
-- Products: romper-caiman, romper-papaya, romper-pinata, romper-venado, kimono-bugambilia, kimono-xolo, kimono-quetzal, kimono-chile (all in Supabase)
-- Overol products: 4 products use cat-overol.jpg (need individual shots — next session)
+- **Collection Rompers**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/product-images/af49064e-4665-4110-9ef5-8e0dd089e9b4/rompers-de-lino.webp
+- **Collection Kimono**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/product-images/af49064e-4665-4110-9ef5-8e0dd089e9b4/sets-kimono.webp
+- **Collection Overoles**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/product-images/af49064e-4665-4110-9ef5-8e0dd089e9b4/overoles.webp
+- Products: All 12 products have individual multi-image galleries (5 images each)
 
 ## 6. Known Issues
-- 2026-05-27 — Overol products (Maíz, Magey, Volcán, Nopal) share the same category image. Individual product images needed.
 - 2026-05-27 — EcommerceTemplate header now has bg-crema — if homepage also renders it, may cause double header. But IndexUI wraps its own header, so EcommerceTemplate header is hidden on homepage (it only renders on inner pages). OK.
 
 ## 7. Pending / Future Sessions
-- [high] Generate individual images for 4 overol products
 - [high] Style Cart and Checkout pages with Trapito design
 - [med] Add scroll-triggered fade-in animations (Intersection Observer)
 - [med] Mobile nav refinements (hamburger menu for EcommerceTemplate)
