@@ -19,8 +19,10 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				'dm-sans': ['"DM Sans"', 'sans-serif'],
+				'fraunces': ['Fraunces', 'Georgia', 'serif'],
 				'inter': ['Inter', 'sans-serif'],
+				// Legacy fonts kept for compatibility
+				'dm-sans': ['"DM Sans"', 'sans-serif'],
 				'lato': ['Lato', 'sans-serif'],
 				'lora': ['Lora', 'serif'],
 				'merriweather': ['Merriweather', 'serif'],
@@ -78,34 +80,67 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				// Trapito brand colors
+				crema: 'hsl(33 57% 92%)',
+				crudo: 'hsl(34 43% 88%)',
+				lino: 'hsl(33 39% 82%)',
+				'rosa-polvo': 'hsl(3 57% 80%)',
+				fucsia: 'hsl(342 50% 54%)',
+				paprika: 'hsl(15 62% 52%)',
+				vino: 'hsl(342 47% 33%)',
+				oliva: 'hsl(72 36% 34%)',
+				'oliva-oscuro': 'hsl(73 36% 25%)',
+				mostaza: 'hsl(38 60% 56%)',
+				'verde-tenue': 'hsl(110 23% 74%)',
+				tinta: 'hsl(20 9% 15%)',
+				'tinta-suave': 'hsl(21 16% 37%)',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
-				sm: 'calc(var(--radius) - 4px)'
+				sm: 'calc(var(--radius) - 4px)',
+				'2xl': '1rem',
+				'3xl': '1.5rem',
+				'4xl': '2rem',
 			},
 			keyframes: {
 				'accordion-down': {
-					from: {
-						height: '0'
-					},
-					to: {
-						height: 'var(--radix-accordion-content-height)'
-					}
+					from: { height: '0' },
+					to: { height: 'var(--radix-accordion-content-height)' }
 				},
 				'accordion-up': {
-					from: {
-						height: 'var(--radix-accordion-content-height)'
-					},
-					to: {
-						height: '0'
-					}
+					from: { height: 'var(--radix-accordion-content-height)' },
+					to: { height: '0' }
+				},
+				'fade-in': {
+					from: { opacity: '0', transform: 'translateY(16px)' },
+					to: { opacity: '1', transform: 'translateY(0)' }
+				},
+				'slide-in-right': {
+					from: { opacity: '0', transform: 'translateX(20px)' },
+					to: { opacity: '1', transform: 'translateX(0)' }
+				},
+				'pulse-soft': {
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0.7' }
+				},
+				'text-cycle': {
+					'0%, 30%': { opacity: '1', transform: 'translateY(0)' },
+					'33%, 63%': { opacity: '0', transform: 'translateY(-8px)' },
+					'66%, 96%': { opacity: '1', transform: 'translateY(0)' },
+					'99%, 100%': { opacity: '0', transform: 'translateY(-8px)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fade-in 0.6s ease-out',
+				'slide-in-right': 'slide-in-right 0.5s ease-out',
+				'pulse-soft': 'pulse-soft 3s ease-in-out infinite',
+			},
+			letterSpacing: {
+				'widest-xl': '0.2em',
 			}
 		}
 	},

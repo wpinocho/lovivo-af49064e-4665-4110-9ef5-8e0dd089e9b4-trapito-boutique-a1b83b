@@ -2,99 +2,104 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Import Fraunces from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400;1,9..144,500&display=swap');
+
 html {
   scroll-behavior: smooth;
 }
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* ══════════════════════════════════════════
+   TRAPITO DESIGN SYSTEM
+   All colors MUST be HSL.
+══════════════════════════════════════════ */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Brand Palette */
+    --crema: 33 57% 92%;
+    --crudo: 34 43% 88%;
+    --lino: 33 39% 82%;
+    --rosa-polvo: 3 57% 80%;
+    --fucsia-quemado: 342 50% 54%;
+    --paprika: 15 62% 52%;
+    --vino: 342 47% 33%;
+    --oliva: 72 36% 34%;
+    --oliva-oscuro: 73 36% 25%;
+    --mostaza: 38 60% 56%;
+    --verde-tenue: 110 23% 74%;
+    --tinta: 20 9% 15%;
+    --tinta-suave: 21 16% 37%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Shadcn tokens mapped to Trapito palette */
+    --background: var(--crema);
+    --foreground: var(--tinta);
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --card: var(--lino);
+    --card-foreground: var(--tinta);
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --popover: var(--crema);
+    --popover-foreground: var(--tinta);
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --primary: var(--oliva);
+    --primary-foreground: var(--crema);
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --secondary: var(--crudo);
+    --secondary-foreground: var(--tinta);
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --muted: var(--crudo);
+    --muted-foreground: var(--tinta-suave);
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --accent: var(--rosa-polvo);
+    --accent-foreground: var(--vino);
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --destructive: 0 70% 50%;
+    --destructive-foreground: var(--crema);
 
-    --radius: 0.5rem;
+    --border: var(--lino);
+    --input: var(--lino);
+    --ring: var(--oliva);
 
-    --sidebar-background: 0 0% 98%;
+    --radius: 0.25rem;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: var(--crema);
+    --sidebar-foreground: var(--tinta);
+    --sidebar-primary: var(--oliva);
+    --sidebar-primary-foreground: var(--crema);
+    --sidebar-accent: var(--crudo);
+    --sidebar-accent-foreground: var(--tinta);
+    --sidebar-border: var(--lino);
+    --sidebar-ring: var(--oliva);
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
+    --background: 20 9% 12%;
+    --foreground: 33 57% 92%;
+    --card: 20 9% 16%;
+    --card-foreground: 33 57% 92%;
+    --popover: 20 9% 12%;
+    --popover-foreground: 33 57% 92%;
+    --primary: var(--oliva);
+    --primary-foreground: var(--crema);
+    --secondary: 20 9% 20%;
+    --secondary-foreground: 33 57% 92%;
+    --muted: 20 9% 20%;
+    --muted-foreground: 33 30% 65%;
+    --accent: var(--rosa-polvo);
+    --accent-foreground: var(--vino);
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --destructive-foreground: 33 57% 92%;
+    --border: 20 9% 22%;
+    --input: 20 9% 22%;
+    --ring: var(--oliva);
+    --sidebar-background: 20 9% 10%;
+    --sidebar-foreground: 33 57% 92%;
+    --sidebar-primary: var(--oliva);
+    --sidebar-primary-foreground: var(--crema);
+    --sidebar-accent: 20 9% 16%;
+    --sidebar-accent-foreground: 33 57% 92%;
+    --sidebar-border: 20 9% 18%;
+    --sidebar-ring: var(--oliva);
   }
 }
 
@@ -104,6 +109,119 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-inter antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-optical-sizing: auto;
+  }
+}
+
+/* ══════════════════════════════════════════
+   TRAPITO TYPOGRAPHY UTILITIES
+══════════════════════════════════════════ */
+
+@layer utilities {
+  .font-fraunces {
+    font-family: 'Fraunces', Georgia, serif;
+    font-optical-sizing: auto;
+  }
+
+  .font-fraunces-italic {
+    font-family: 'Fraunces', Georgia, serif;
+    font-optical-sizing: auto;
+    font-style: italic;
+  }
+
+  /* Text color utilities using CSS vars */
+  .text-crema { color: hsl(var(--crema)); }
+  .text-crudo { color: hsl(var(--crudo)); }
+  .text-lino { color: hsl(var(--lino)); }
+  .text-rosa-polvo { color: hsl(var(--rosa-polvo)); }
+  .text-fucsia { color: hsl(var(--fucsia-quemado)); }
+  .text-paprika { color: hsl(var(--paprika)); }
+  .text-vino { color: hsl(var(--vino)); }
+  .text-oliva { color: hsl(var(--oliva)); }
+  .text-oliva-oscuro { color: hsl(var(--oliva-oscuro)); }
+  .text-mostaza { color: hsl(var(--mostaza)); }
+  .text-tinta { color: hsl(var(--tinta)); }
+  .text-tinta-suave { color: hsl(var(--tinta-suave)); }
+
+  /* Background utilities */
+  .bg-crema { background-color: hsl(var(--crema)); }
+  .bg-crudo { background-color: hsl(var(--crudo)); }
+  .bg-lino { background-color: hsl(var(--lino)); }
+  .bg-rosa-polvo { background-color: hsl(var(--rosa-polvo)); }
+  .bg-fucsia { background-color: hsl(var(--fucsia-quemado)); }
+  .bg-paprika { background-color: hsl(var(--paprika)); }
+  .bg-vino { background-color: hsl(var(--vino)); }
+  .bg-oliva { background-color: hsl(var(--oliva)); }
+  .bg-oliva-oscuro { background-color: hsl(var(--oliva-oscuro)); }
+  .bg-mostaza { background-color: hsl(var(--mostaza)); }
+  .bg-verde-tenue { background-color: hsl(var(--verde-tenue)); }
+  .bg-tinta { background-color: hsl(var(--tinta)); }
+
+  /* Border utilities */
+  .border-crema { border-color: hsl(var(--crema)); }
+  .border-lino { border-color: hsl(var(--lino)); }
+  .border-oliva { border-color: hsl(var(--oliva)); }
+  .border-vino { border-color: hsl(var(--vino)); }
+  .border-rosa-polvo { border-color: hsl(var(--rosa-polvo)); }
+
+  /* Eyebrow text style */
+  .eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  /* Trapito section padding */
+  .section-padding {
+    @apply py-14 md:py-20;
+  }
+
+  .section-padding-lg {
+    @apply py-16 md:py-24 lg:py-28;
+  }
+
+  /* Container */
+  .trapito-container {
+    @apply max-w-[1280px] mx-auto px-6 md:px-12;
+  }
+
+  /* Grain texture overlay */
+  .grain-overlay::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Scroll fade-in animation */
+  .fade-in-up {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  }
+
+  .fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Announcement bar text fade */
+  .announcement-text {
+    animation: announceFade 4s ease-in-out infinite;
+  }
+
+  @keyframes announceFade {
+    0%, 5% { opacity: 0; transform: translateY(4px); }
+    15%, 85% { opacity: 1; transform: translateY(0); }
+    95%, 100% { opacity: 0; transform: translateY(-4px); }
   }
 }

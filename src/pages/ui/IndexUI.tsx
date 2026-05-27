@@ -1,20 +1,22 @@
-import { Input } from '@/components/ui/input';
-import { Button } from '@/components/ui/button';
-import { Search } from 'lucide-react';
-import { ProductCard } from '@/components/ProductCard';
-import { CollectionCard } from '@/components/CollectionCard';
+import { AnnouncementBar } from '@/components/sections/AnnouncementBar';
+import { TrapitoHeader } from '@/components/sections/TrapitoHeader';
+import { TrapitoHero } from '@/components/sections/TrapitoHero';
+import { TrapitoUSPs } from '@/components/sections/TrapitoUSPs';
+import { TrapitoCategorias } from '@/components/sections/TrapitoCategorias';
+import { TrapitoProductos } from '@/components/sections/TrapitoProductos';
+import { TrapitoHistoria } from '@/components/sections/TrapitoHistoria';
+import { TrapitoDetalles } from '@/components/sections/TrapitoDetalles';
+import { TrapitoPackaging } from '@/components/sections/TrapitoPackaging';
+import { TrapitoTestimonios } from '@/components/sections/TrapitoTestimonios';
+import { TrapitoNewsletter } from '@/components/sections/TrapitoNewsletter';
+import { TrapitoFooter } from '@/components/sections/TrapitoFooter';
 import { FloatingCart } from '@/components/FloatingCart';
-import { NewsletterSection } from '@/components/NewsletterSection';
-import { EcommerceTemplate } from '@/templates/EcommerceTemplate';
-import { BundleCard } from '@/components/ui/BundleCard';
-import { useBundles } from '@/hooks/useBundles';
 import type { UseIndexLogicReturn } from '@/components/headless/HeadlessIndex';
 
 /**
- * EDITABLE UI - IndexUI
- * 
- * Interfaz completamente editable para la página principal.
- * El agente IA puede modificar colores, textos, layout, etc.
+ * TRAPITO — Landing Page UI
+ * Boutique premium de ropa de bebé mexicana contemporánea.
+ * Todas las secciones están en src/components/sections/
  */
 
 interface IndexUIProps {
@@ -22,129 +24,46 @@ interface IndexUIProps {
 }
 
 export const IndexUI = ({ logic }: IndexUIProps) => {
-  const {
-    collections,
-    loading,
-    loadingCollections,
-    selectedCollectionId,
-    filteredProducts,
-    handleViewCollectionProducts,
-    handleShowAllProducts
-  } = logic;
-
-  const { bundles, loading: loadingBundles } = useBundles();
-
   return (
-    <EcommerceTemplate
-      showCart={true}>
+    <div className="min-h-screen bg-crema font-inter">
+      {/* Announcement Bar */}
+      <AnnouncementBar />
 
-      {/* Hero Section */}
-      <section className="bg-background py-12 border-b">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl font-bold text-foreground mb-4">
-            Descubre Nuestros Productos
-          </h1>
-          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-            ​
-          </p>
-        </div>
-      </section>
+      {/* Header */}
+      <TrapitoHeader />
 
-      {/* Collections Section */}
-      {loadingCollections ?
-      <section id="collections" className="py-12 bg-muted/30">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="h-8 w-48 bg-muted rounded animate-pulse mb-8"></div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-              {[...Array(4)].map((_, i) =>
-            <div key={i} className="bg-muted rounded-lg animate-pulse" style={{ aspectRatio: '4/3' }}></div>
-            )}
-            </div>
-          </div>
-        </section> :
-      collections.length > 0 ?
-      <section id="collections" className="py-12 bg-muted/30">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-2xl font-bold text-foreground mb-8">
-              Nuestras Colecciones
-            </h2>
-            
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-              {collections.map((collection, index) =>
-            <CollectionCard
-              key={collection.id}
-              collection={collection}
-              onViewProducts={handleViewCollectionProducts}
-              eager={index === 0} />
+      {/* Hero */}
+      <TrapitoHero />
 
-            )}
-            </div>
-          </div>
-        </section> :
-      null}
+      {/* USPs Band */}
+      <TrapitoUSPs />
 
-      {/* Bundles Section */}
-      {!loadingBundles && bundles.length > 0 &&
-      <section id="bundles" className="py-12 bg-muted/30">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-2xl font-bold text-foreground mb-8">
-              Paquetes Especiales
-            </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-              {bundles.map((bundle) =>
-            <BundleCard key={bundle.id} bundle={bundle} />
-            )}
-            </div>
-          </div>
-        </section>
-      }
+      {/* Categories */}
+      <TrapitoCategorias />
 
-      {/* Products Section */}
-      <section id="products" className="py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between mb-8">
-            <h2 className="text-2xl font-bold text-foreground">
-              {selectedCollectionId ?
-              `Productos de ${collections.find((c) => c.id === selectedCollectionId)?.name || 'Colección'}` :
-              'Productos Destacados'
-              }
-            </h2>
-            {selectedCollectionId &&
-            <Button
-              variant="outline"
-              onClick={handleShowAllProducts}>
+      {/* Featured Products */}
+      <TrapitoProductos logic={logic} />
 
-                Ver Todos los Productos
-              </Button>
-            }
-          </div>
-          
-          {loading ?
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-              {[...Array(8)].map((_, i) =>
-            <div key={i} className="bg-muted rounded-lg h-80 animate-pulse"></div>
-            )}
-            </div> :
-          filteredProducts.length > 0 ?
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-              {filteredProducts.map((product) =>
-            <ProductCard key={product.id} product={product} />
-            )}
-            </div> :
+      {/* Brand Story */}
+      <TrapitoHistoria />
 
-          <div className="text-center py-12">
-              <p className="text-muted-foreground">
-                No hay productos disponibles.
-              </p>
-            </div>
-          }
-        </div>
-      </section>
+      {/* Craftsmanship Details */}
+      <TrapitoDetalles />
 
-      {/* Newsletter Section */}
-      <NewsletterSection />
+      {/* Packaging Section */}
+      <TrapitoPackaging />
 
+      {/* Testimonials */}
+      <TrapitoTestimonios />
+
+      {/* Newsletter */}
+      <TrapitoNewsletter />
+
+      {/* Footer */}
+      <TrapitoFooter />
+
+      {/* Floating Cart */}
       <FloatingCart />
-    </EcommerceTemplate>);
-
+    </div>
+  );
 };

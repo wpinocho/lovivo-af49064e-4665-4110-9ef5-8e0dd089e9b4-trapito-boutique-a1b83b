@@ -9,10 +9,10 @@ const Index = () => {
   return (
     <>
       <SEO
-        title={storeName}
-        description={`Tienda online de ${storeName}. Descubre nuestros productos con envíos a todo el país.`}
+        title="Trapito — Babywear Mexicano Contemporáneo | Lino y Algodón Natural"
+        description="Ropa de bebé premium en lino y algodón natural con bordados mexicanos hechos a mano. Diseñada para los 0-12 meses. Llega en caja de regalo lista para sorprender."
         canonicalPath="/"
-        jsonLd={[organizationJsonLd(storeName, socialLinks), websiteJsonLd(storeName)]}
+        jsonLd={[organizationJsonLd('Trapito', socialLinks), websiteJsonLd('Trapito')]}
       />
       <HeadlessIndex>
         {(logic) => <IndexUI logic={logic} />}
