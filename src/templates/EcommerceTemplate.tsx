@@ -48,7 +48,7 @@ export const EcommerceTemplate = ({
   const { hasCollections, loading: loadingCollections } = useCollections()
 
   const header = (
-    <div className={`py-2 ${headerClassName}`}>
+    <div className={`bg-crema border-b border-lino py-3 ${headerClassName}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo */}
@@ -60,20 +60,20 @@ export const EcommerceTemplate = ({
               {!loadingCollections && hasCollections && (
                 <ScrollLink 
                   to="/#collections" 
-                  className="text-foreground/70 hover:text-foreground transition-colors"
+                  className="font-inter text-sm text-tinta-suave hover:text-tinta transition-colors"
                 >
                   Colecciones
                 </ScrollLink>
               )}
               <ScrollLink 
                 to="/#products" 
-                className="text-foreground/70 hover:text-foreground transition-colors"
+                className="font-inter text-sm text-tinta-suave hover:text-tinta transition-colors"
               >
                 Productos
               </ScrollLink>
               <Link 
                 to="/blog" 
-                className="text-foreground/70 hover:text-foreground transition-colors"
+                className="font-inter text-sm text-tinta-suave hover:text-tinta transition-colors"
               >
                 Blog
               </Link>
@@ -94,7 +94,7 @@ export const EcommerceTemplate = ({
               >
                 <ShoppingCart className="h-5 w-5" />
                 {totalItems > 0 && (
-                  <span className="absolute -top-2 -right-2 bg-primary text-primary-foreground text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
+                  <span className="absolute -top-2 -right-2 bg-vino text-crema text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
                     {totalItems > 99 ? '99+' : totalItems}
                   </span>
                 )}
@@ -116,42 +116,42 @@ export const EcommerceTemplate = ({
   )
 
   const footer = (
-    <div className={`bg-black text-white py-12 ${footerClassName}`}>
+    <div className={`bg-tinta text-crema py-12 ${footerClassName}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Brand */}
           <div>
             <BrandLogoLeft />
-            <p className="mt-4 text-white/70">
-              Tu tienda online de confianza
+            <p className="mt-4 font-inter text-sm text-crema/60 leading-relaxed">
+              Ropa de bebé mexicana contemporánea.<br/>Lino y algodón natural, bordado a mano.
             </p>
           </div>
 
           {/* Links */}
           <div>
-            <h3 className="font-semibold mb-4 text-white">Enlaces</h3>
+            <h3 className="font-fraunces text-base font-medium mb-4 text-crema">Tienda</h3>
             <div className="space-y-2">
               <Link 
                 to="/" 
-                className="block text-white/70 hover:text-white transition-colors"
+                className="block font-inter text-sm text-crema/60 hover:text-crema transition-colors"
               >
                 Inicio
               </Link>
               <Link 
                 to="/blog" 
-                className="block text-white/70 hover:text-white transition-colors"
+                className="block font-inter text-sm text-crema/60 hover:text-crema transition-colors"
               >
                 Blog
               </Link>
               <Link 
                 to="/terminos-y-condiciones" 
-                className="block text-white/70 hover:text-white transition-colors"
+                className="block font-inter text-sm text-crema/60 hover:text-crema transition-colors"
               >
                 Términos y Condiciones
               </Link>
               <Link 
                 to="/aviso-de-privacidad" 
-                className="block text-white/70 hover:text-white transition-colors"
+                className="block font-inter text-sm text-crema/60 hover:text-crema transition-colors"
               >
                 Aviso de Privacidad
               </Link>
@@ -160,13 +160,13 @@ export const EcommerceTemplate = ({
 
           {/* Social Links */}
           <div>
-            <h3 className="font-semibold mb-4 text-white">Síguenos</h3>
+            <h3 className="font-fraunces text-base font-medium mb-4 text-crema">Síguenos</h3>
             <SocialLinks />
           </div>
         </div>
 
-        <div className="mt-8 pt-8 border-t border-white/20 text-center text-white/70">
-          <p>&copy; 2025 Tu Tienda. Todos los derechos reservados.</p>
+        <div className="mt-8 pt-8 border-t border-crema/20 text-center text-crema/50">
+          <p className="font-inter text-xs">&copy; 2025 Trapito. Todos los derechos reservados.</p>
         </div>
       </div>
     </div>
