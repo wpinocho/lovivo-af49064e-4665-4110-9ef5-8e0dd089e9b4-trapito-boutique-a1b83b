@@ -59,8 +59,8 @@ export const TrapitoHero = () => {
             <div className="relative">
               <div className="aspect-[4/5] rounded-3xl overflow-hidden bg-verde-tenue">
                 <img
-                  src="https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/product-images/af49064e-4665-4110-9ef5-8e0dd089e9b4/hero-baby.webp"
-                  alt="Bebé recién nacido durmiendo con romper de lino bordado a mano de Trapito"
+                  src="https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/2951759c-e79e-4fd2-b408-bf60182e438e/1779985000373-sw44cedayzi.webp"
+                  alt="Bebé recién nacido durmiendo con romper de lino verde bordado a mano de Trapito"
                   className="w-full h-full object-cover"
                   loading="eager"
                 />
