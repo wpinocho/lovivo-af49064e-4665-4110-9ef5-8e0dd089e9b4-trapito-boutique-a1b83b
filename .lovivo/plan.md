@@ -25,10 +25,14 @@
 - Copy rules: NEVER em dash; NEVER all-caps except eyebrows; max 2 fonts
 
 ## 3. Active Plan
-### Hero Image — completed 2026-05-28
-- User uploaded real lifestyle photo: newborn baby sleeping on linen, wearing green linen romper with hand embroidery (deer/giraffe motif). Warm window light. Updated in TrapitoHero.tsx.
+### All homepage sections — completed 2026-05-28
+- Hero: real baby photo (green linen romper with deer embroidery)
+- Categorias: real product photos (overoles, kimonos, rompers)
+- Historia: AI-generated artisan embroidery photo (hands + deer motif on sage green linen)
+- Packaging: real photo
 
 ## 4. Recent Changes
+- 2026-05-28 — Generated artisan embroidery image for TrapitoHistoria (hands + deer on linen hoop), updated component
 - 2026-05-28 — Replaced hero image with user-uploaded real lifestyle photo (baby in green romper with hand embroidery)
 - 2026-05-28 — Generated hero lifestyle image (AI, Gemini) with product references → public/hero-baby.webp, updated TrapitoHero.tsx
 - 2026-05-28 — Updated TrapitoCategorias with real product photos (user-uploaded) for overoles, kimono, rompers
@@ -43,12 +47,11 @@
 - 2026-05-27 — Added care instructions accordion (linen-specific washing tips)
 - 2026-05-27 — Added sticky bar redesign: bg-tinta text-crema, CTA = bg-crema text-tinta
 - 2026-05-27 — Created TrapitoRelatedProducts component (fetches 3 related products)
-- 2026-05-27 — Updated EcommerceTemplate: bg-crema header, bg-tinta footer, vino cart badge
 
 ## 5. Image Inventory
 - Logo: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/temp_1779899822544_9bb8b9d3/1779899822544-i6kkb5mefds.png
-- **Hero baby (REAL PHOTO)**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/2951759c-e79e-4fd2-b408-bf60182e438e/1779985000373-sw44cedayzi.webp (bebé en romper verde con bordado, foto real)
-- Brand story: /brand-story.jpg (placeholder — needs replacement)
+- **Hero baby (REAL PHOTO)**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/2951759c-e79e-4fd2-b408-bf60182e438e/1779985000373-sw44cedayzi.webp
+- **Brand Story (AI — artisan hands)**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/product-images/af49064e-4665-4110-9ef5-8e0dd089e9b4/brand-story.webp
 - Packaging (REAL PHOTO): https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/2951759c-e79e-4fd2-b408-bf60182e438e/1779907514878-iifo91wm43.webp
 - **Collection Overoles (REAL)**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/2951759c-e79e-4fd2-b408-bf60182e438e/1779981567518-ch4t0nk71gt.webp
 - **Collection Kimono (REAL)**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/2951759c-e79e-4fd2-b408-bf60182e438e/1779981567518-ktiddj8yec9.webp
@@ -59,7 +62,6 @@
 - 2026-05-27 — EcommerceTemplate header now has bg-crema — if homepage also renders it, may cause double header. But IndexUI wraps its own header, so EcommerceTemplate header is hidden on homepage (it only renders on inner pages). OK.
 
 ## 7. Pending / Future Sessions
-- [high] Imagen "Nuestra Historia" — needs real lifestyle/artisan shot (user can upload or we generate AI)
 - [high] Style Cart and Checkout pages with Trapito design
 - [med] Add scroll-triggered fade-in animations (Intersection Observer)
 - [med] Mobile nav refinements (hamburger menu for EcommerceTemplate)
