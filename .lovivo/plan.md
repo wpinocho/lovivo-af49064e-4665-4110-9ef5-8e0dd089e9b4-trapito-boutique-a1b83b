@@ -25,11 +25,11 @@
 - Copy rules: NEVER em dash; NEVER all-caps except eyebrows; max 2 fonts
 
 ## 3. Active Plan
-### Collection Images — completed 2026-05-27
-- Generated 3 editorial flatlay collection images using real product references
-- Updated all 3 collections in DB with new images
+### Collection Images — completed 2026-05-28
+- Replaced all 3 collection images with real product photos uploaded by the user
 
 ## 4. Recent Changes
+- 2026-05-28 — Updated TrapitoCategorias with real product photos (user-uploaded) for overoles, kimono, rompers
 - 2026-05-27 — Generated 3 collection images (flatlay editorial) using product references
 - 2026-05-27 — Updated Rompers de Lino, Sets Kimono, Overoles collections with new images
 - 2026-05-27 — Updated packaging image in TrapitoPackaging.tsx with user-uploaded real photo
@@ -50,9 +50,9 @@
 - Hero baby: /hero-baby.jpg (also Supabase URL)
 - Brand story: /brand-story.jpg
 - Packaging (REAL PHOTO): https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/2951759c-e79e-4fd2-b408-bf60182e438e/1779907514878-iifo91wm43.webp
-- **Collection Rompers**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/product-images/af49064e-4665-4110-9ef5-8e0dd089e9b4/rompers-de-lino.webp
-- **Collection Kimono**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/product-images/af49064e-4665-4110-9ef5-8e0dd089e9b4/sets-kimono.webp
-- **Collection Overoles**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/product-images/af49064e-4665-4110-9ef5-8e0dd089e9b4/overoles.webp
+- **Collection Overoles (REAL)**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/2951759c-e79e-4fd2-b408-bf60182e438e/1779981567518-ch4t0nk71gt.webp
+- **Collection Kimono (REAL)**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/2951759c-e79e-4fd2-b408-bf60182e438e/1779981567518-ktiddj8yec9.webp
+- **Collection Rompers (REAL)**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/2951759c-e79e-4fd2-b408-bf60182e438e/1779981567518-8p77etf0262.webp
 - Products: All 12 products have individual multi-image galleries (5 images each)
 
 ## 6. Known Issues
