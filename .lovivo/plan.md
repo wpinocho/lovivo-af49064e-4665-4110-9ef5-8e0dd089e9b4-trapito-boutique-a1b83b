@@ -28,23 +28,28 @@
 ## 3. Active Plan
 ### All homepage sections — completed 2026-05-28
 - Hero: real baby photo (green linen romper with deer embroidery)
-- Categorias: real product photos (overoles, kimonos, rompers) — now swipeable carousel on mobile
+- Categorias: real product photos (overoles, kimonos, rompers) — swipeable carousel on mobile
 - Historia: AI-generated artisan embroidery photo (hands + deer motif on sage green linen)
 - Packaging: real photo
 - Productos: shows all 12, "Agregar al carrito" funcional, imagen → PDP
 
+### PDP mobile — completed 2026-05-28
+- Gallery: full-bleed on mobile (-mx-6), thumbnails below carousel with API sync
+- Sticky bar: solid bg-tinta (no opacity), single-row layout on mobile
+- Related products: full-bleed carousel with card peek on mobile
+
 ## 4. Recent Changes
+- 2026-05-28 — PDP sticky bar: bg-tinta solid, single-row mobile (image+title+comprar/price)
+- 2026-05-28 — PDP gallery mobile: full-bleed (-mx-6), reduced top padding, thumbnails with carousel API sync
+- 2026-05-28 — TrapitoRelatedProducts: full-bleed carousel on mobile (-mx-6 + pl-6), card peek with 70vw width
 - 2026-05-28 — TrapitoRelatedProducts: carousel + filtra por tipo de producto (romper/kimono/overol) + acepta productTags prop
 - 2026-05-28 — ProductPageUI: pasa productTags a TrapitoRelatedProducts para filtrar por colección real
-- 2026-05-28 — TrapitoProductos: muestra los 12 productos, renombrado "Nuestros productos", botón "Agregar al carrito" funcional (useCart + openCart), imagen separada del botón para PDP vs carrito
+- 2026-05-28 — TrapitoProductos: muestra los 12 productos, renombrado "Nuestros productos", botón "Agregar al carrito" funcional (useCart + openCart)
 - 2026-05-28 — TrapitoCategorias: carrusel swipeable en mobile (overflow-x-auto + snap), grid en desktop
 - 2026-05-28 — index.css: añadida clase .scrollbar-none para carruseles
-- 2026-05-28 — Generated artisan embroidery image for TrapitoHistoria (hands + deer on linen hoop), updated component
-- 2026-05-28 — Replaced hero image with user-uploaded real lifestyle photo (baby in green romper with hand embroidery)
-- 2026-05-28 — Generated hero lifestyle image (AI, Gemini) with product references → public/hero-baby.webp, updated TrapitoHero.tsx
-- 2026-05-28 — Updated TrapitoCategorias with real product photos (user-uploaded) for overoles, kimono, rompers
+- 2026-05-28 — Generated artisan embroidery image for TrapitoHistoria (hands + deer on linen hoop)
+- 2026-05-28 — Replaced hero image with user-uploaded real lifestyle photo (baby in green romper)
 - 2026-05-27 — Generated 3 collection images (flatlay editorial) using product references
-- 2026-05-27 — Updated Rompers de Lino, Sets Kimono, Overoles collections with new images
 - 2026-05-27 — Updated packaging image in TrapitoPackaging.tsx with user-uploaded real photo
 - 2026-05-27 — Full PDP redesign: Fraunces title, crema/crudo bg, oliva buttons, stars rating
 - 2026-05-27 — Added sticky bar redesign: bg-tinta text-crema, CTA = bg-crema text-tinta
@@ -61,7 +66,7 @@
 - Products: All 12 products have individual multi-image galleries (5 images each)
 
 ## 6. Known Issues
-- 2026-05-27 — EcommerceTemplate header now has bg-crema — if homepage also renders it, may cause double header. But IndexUI wraps its own header, so EcommerceTemplate header is hidden on homepage (it only renders on inner pages). OK.
+- 2026-05-27 — EcommerceTemplate header now has bg-crema — if homepage also renders it, may cause double header. But IndexUI wraps its own header, so EcommerceTemplate header is hidden on homepage. OK.
 
 ## 7. Pending / Future Sessions
 - [high] Style Cart and Checkout pages with Trapito design

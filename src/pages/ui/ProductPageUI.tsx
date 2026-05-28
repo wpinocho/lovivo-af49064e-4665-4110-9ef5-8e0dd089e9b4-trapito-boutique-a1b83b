@@ -104,6 +104,8 @@ export const ProductPageUI = ({ logic }: ProductPageUIProps) => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null)
   const [expressAvailable, setExpressAvailable] = useState(false)
   const [isZoomed, setIsZoomed] = useState(false)
+  const [carouselApi, setCarouselApi] = useState<any>(null)
+  const [currentSlide, setCurrentSlide] = useState(0)
   const { ref: ctaRef, inView: ctaInView } = useInView({ threshold: 0 })
 
   const displayImage =
@@ -119,6 +121,13 @@ export const ProductPageUI = ({ logic }: ProductPageUIProps) => {
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
+
+  useEffect(() => {
+    if (!carouselApi) return
+    const onSelect = () => setCurrentSlide(carouselApi.selectedScrollSnap())
+    carouselApi.on('select', onSelect)
+    return () => { carouselApi.off('select', onSelect) }
+  }, [carouselApi])
 
   // ——— Loading skeleton ———
   if (logic.loading) {
@@ -215,7 +224,7 @@ export const ProductPageUI = ({ logic }: ProductPageUIProps) => {
       />
       <EcommerceTemplate hideFloatingCartOnMobile>
         <div className="bg-crema min-h-screen">
-          <div className="max-w-[1280px] mx-auto px-6 md:px-12 py-8 md:py-12">
+          <div className="max-w-[1280px] mx-auto px-6 md:px-12 pt-3 pb-8 md:py-12">
 
             {/* ——— Breadcrumbs ——— */}
             <nav
@@ -239,7 +248,7 @@ export const ProductPageUI = ({ logic }: ProductPageUIProps) => {
             <button
               type="button"
               onClick={logic.handleNavigateBack}
-              className="md:hidden mb-5 inline-flex items-center gap-1.5 font-inter text-sm text-tinta-suave hover:text-tinta transition-colors"
+              className="md:hidden mb-2 inline-flex items-center gap-1.5 font-inter text-sm text-tinta-suave hover:text-tinta transition-colors"
             >
               <ArrowLeft className="h-3.5 w-3.5" />
               Seguir comprando
@@ -306,14 +315,14 @@ export const ProductPageUI = ({ logic }: ProductPageUIProps) => {
                   )}
                 </div>
 
-                {/* Mobile carousel */}
+                {/* Mobile carousel - full bleed */}
                 {logic.displayImages && logic.displayImages.length > 1 ? (
-                  <div className="md:hidden">
-                    <Carousel className="w-full">
-                      <CarouselContent>
+                  <div className="md:hidden -mx-6">
+                    <Carousel className="w-full" setApi={setCarouselApi}>
+                      <CarouselContent className="-ml-0">
                         {logic.displayImages.map((img: string, index: number) => (
-                          <CarouselItem key={index}>
-                            <div className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-crudo">
+                          <CarouselItem key={index} className="pl-0">
+                            <div className="relative aspect-[4/5] overflow-hidden bg-crema">
                               <img
                                 src={img}
                                 alt={`${logic.product.title} ${index + 1}`}
@@ -329,12 +338,33 @@ export const ProductPageUI = ({ logic }: ProductPageUIProps) => {
                           </CarouselItem>
                         ))}
                       </CarouselContent>
-                      <CarouselPrevious className="left-2" />
-                      <CarouselNext className="right-2" />
                     </Carousel>
+                    {/* Mobile thumbnails */}
+                    <div className="flex gap-2 mt-3 px-6 overflow-x-auto scrollbar-none">
+                      {logic.displayImages.map((img: string, index: number) => (
+                        <button
+                          key={index}
+                          onClick={() => carouselApi?.scrollTo(index)}
+                          className={cn(
+                            "shrink-0 w-[58px] h-[58px] rounded-xl overflow-hidden border-2 transition-all bg-crudo",
+                            currentSlide === index
+                              ? "border-oliva"
+                              : "border-transparent hover:border-lino"
+                          )}
+                          aria-label={`Ver imagen ${index + 1}`}
+                        >
+                          <img
+                            src={img}
+                            alt={`${logic.product.title} ${index + 1}`}
+                            loading="lazy"
+                            className="w-full h-full object-contain"
+                          />
+                        </button>
+                      ))}
+                    </div>
                   </div>
                 ) : (
-                  <div className="md:hidden relative aspect-[4/5] rounded-2xl overflow-hidden bg-crudo">
+                  <div className="md:hidden relative aspect-[4/5] -mx-6 overflow-hidden bg-crema">
                     <img
                       src={displayImage}
                       alt={logic.product.title}
@@ -793,7 +823,7 @@ export const ProductPageUI = ({ logic }: ProductPageUIProps) => {
         {logic.inStock && (
           <div
             className={cn(
-              "fixed bottom-0 left-0 right-0 z-50 bg-tinta/97 backdrop-blur-sm border-t border-tinta transition-transform duration-300 ease-out pb-[env(safe-area-inset-bottom)]",
+              "fixed bottom-0 left-0 right-0 z-50 bg-tinta border-t border-tinta/30 transition-transform duration-300 ease-out pb-[env(safe-area-inset-bottom)]",
               ctaInView ? "translate-y-full" : "translate-y-0"
             )}
           >
@@ -836,42 +866,26 @@ export const ProductPageUI = ({ logic }: ProductPageUIProps) => {
                 </div>
               </div>
 
-              {/* Mobile */}
-              <div className="md:hidden space-y-2">
-                <div className="flex items-center gap-2">
-                  <div className="w-10 h-10 rounded-lg overflow-hidden bg-crudo shrink-0">
-                    <img
-                      src={displayImage}
-                      alt=""
-                      className="w-full h-full object-contain"
-                    />
-                  </div>
-                  <div className="flex items-center justify-between gap-2 flex-1 min-w-0">
-                    <h3 className="font-fraunces text-sm text-crema truncate">
-                      {logic.product.title}
-                    </h3>
-                    <span className="font-fraunces text-sm font-medium text-crema shrink-0">
-                      {logic.formatMoney(logic.currentPrice)}
-                    </span>
-                  </div>
+              {/* Mobile - single row */}
+              <div className="md:hidden flex items-center gap-2.5 py-1">
+                <div className="w-11 h-11 rounded-lg overflow-hidden bg-crudo shrink-0">
+                  <img
+                    src={displayImage}
+                    alt=""
+                    className="w-full h-full object-contain"
+                  />
                 </div>
-                <div className="flex gap-2">
-                  <button
-                    type="button"
-                    onClick={logic.handleBuyNow}
-                    className="flex-1 h-10 bg-crema text-tinta font-inter font-medium text-sm rounded-sm hover:bg-lino transition-colors"
-                  >
-                    Comprar ahora
-                  </button>
-                  <button
-                    type="button"
-                    onClick={logic.handleAddToCart}
-                    className="flex-1 h-10 border border-crema/40 text-crema font-inter font-medium text-sm rounded-sm hover:border-crema transition-colors flex items-center justify-center gap-1.5"
-                  >
-                    <ShoppingCart className="h-3.5 w-3.5" />
-                    Agregar
-                  </button>
-                </div>
+                <p className="font-fraunces text-sm text-crema truncate flex-1 min-w-0">
+                  {logic.product.title}
+                </p>
+                <button
+                  type="button"
+                  onClick={logic.handleBuyNow}
+                  className="shrink-0 h-12 px-4 bg-crema text-tinta font-inter rounded-sm hover:bg-lino transition-colors flex flex-col items-center justify-center"
+                >
+                  <span className="text-sm font-semibold leading-tight">Comprar</span>
+                  <span className="text-[11px] font-normal leading-tight opacity-70">{logic.formatMoney(logic.currentPrice)}</span>
+                </button>
               </div>
             </div>
           </div>

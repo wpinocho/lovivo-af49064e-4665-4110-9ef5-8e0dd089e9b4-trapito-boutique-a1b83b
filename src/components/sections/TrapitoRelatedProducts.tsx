@@ -81,10 +81,11 @@ export const TrapitoRelatedProducts = ({ currentProductId, productTags = [] }: T
         </div>
       </div>
 
-      {/* Carousel */}
+      {/* Carousel — full-bleed on mobile so next card peeks */}
+      <div className="-mx-6 md:mx-0">
       <div
         ref={scrollRef}
-        className="overflow-x-auto flex gap-4 pb-3 snap-x snap-mandatory scroll-smooth scrollbar-none"
+        className="overflow-x-auto flex gap-4 pb-3 snap-x snap-mandatory scroll-smooth scrollbar-none pl-6 md:pl-0 pr-6 md:pr-0 scroll-pl-6 md:scroll-pl-0"
       >
         {products.map((product) => {
           const images: string[] = (product as any).images ?? []
@@ -100,7 +101,7 @@ export const TrapitoRelatedProducts = ({ currentProductId, productTags = [] }: T
             <Link
               key={product.id}
               to={`/productos/${(product as any).slug}`}
-              className="group block flex-none w-[72vw] sm:w-[46vw] md:w-[32vw] lg:w-[24vw] snap-start"
+              className="group block flex-none w-[70vw] sm:w-[46vw] md:w-[32vw] lg:w-[24vw] snap-start"
             >
               <div className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-crudo mb-3">
                 {image ? (
@@ -125,6 +126,7 @@ export const TrapitoRelatedProducts = ({ currentProductId, productTags = [] }: T
             </Link>
           )
         })}
+      </div>
       </div>
     </section>
   )
