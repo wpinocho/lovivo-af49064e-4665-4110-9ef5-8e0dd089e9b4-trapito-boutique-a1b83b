@@ -27,7 +27,7 @@ export const TrapitoCategorias = () => {
     <section id="colecciones" className="bg-crema section-padding-lg">
       <div className="trapito-container">
         {/* Header */}
-        <div className="text-center mb-12 md:mb-16">
+        <div className="text-center mb-10 md:mb-14">
           <p className="eyebrow text-oliva mb-4">Colección Cápsula</p>
           <h2 className="font-fraunces text-[36px] md:text-[44px] text-tinta leading-tight tracking-[-0.02em] mb-4">
             Tres siluetas, doce piezas.
@@ -37,35 +37,37 @@ export const TrapitoCategorias = () => {
           </p>
         </div>
 
-        {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-          {categories.map((cat) => (
-            <a
-              key={cat.name}
-              href={cat.href}
-              className="group block"
-            >
-              {/* Image */}
-              <div className="relative aspect-[3/4] rounded-2xl overflow-hidden bg-lino mb-4">
-                <img
-                  src={cat.image}
-                  alt={cat.name}
-                  className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500 ease-out"
-                  loading="lazy"
-                />
-                {/* Badge */}
-                <div className="absolute bottom-4 left-4 bg-crema/95 rounded-sm px-2.5 py-1">
-                  <span className="font-inter text-[11px] font-medium text-vino tracking-wide">{cat.badge}</span>
+        {/* Carousel — swipeable on mobile, grid on desktop */}
+        <div className="overflow-x-auto -mx-5 px-5 scrollbar-none md:overflow-visible md:mx-0 md:px-0">
+          <div className="flex gap-5 pb-3 md:grid md:grid-cols-3 md:gap-8 md:pb-0">
+            {categories.map((cat) => (
+              <a
+                key={cat.name}
+                href={cat.href}
+                className="group block flex-none w-[78vw] sm:w-[56vw] md:w-auto"
+              >
+                {/* Image */}
+                <div className="relative aspect-[3/4] rounded-2xl overflow-hidden bg-lino mb-4">
+                  <img
+                    src={cat.image}
+                    alt={cat.name}
+                    className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500 ease-out"
+                    loading="lazy"
+                  />
+                  {/* Badge */}
+                  <div className="absolute bottom-4 left-4 bg-crema/95 rounded-sm px-2.5 py-1">
+                    <span className="font-inter text-[11px] font-medium text-vino tracking-wide">{cat.badge}</span>
+                  </div>
                 </div>
-              </div>
-              {/* Text */}
-              <h3 className="font-fraunces text-[22px] text-tinta mb-1.5">{cat.name}</h3>
-              <p className="font-inter text-sm text-tinta-suave leading-relaxed mb-3">{cat.desc}</p>
-              <span className="font-inter text-sm font-medium text-oliva group-hover:text-oliva-oscuro transition-colors duration-200">
-                Ver colección →
-              </span>
-            </a>
-          ))}
+                {/* Text */}
+                <h3 className="font-fraunces text-[22px] text-tinta mb-1.5">{cat.name}</h3>
+                <p className="font-inter text-sm text-tinta-suave leading-relaxed mb-3">{cat.desc}</p>
+                <span className="font-inter text-sm font-medium text-oliva group-hover:text-oliva-oscuro transition-colors duration-200">
+                  Ver colección →
+                </span>
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </section>

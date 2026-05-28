@@ -23,15 +23,22 @@
 - Background: always crema or crudo — NEVER white
 - Shadows: imperceptible / none
 - Copy rules: NEVER em dash; NEVER all-caps except eyebrows; max 2 fonts
+- `.scrollbar-none` utility added to index.css (hide scrollbar for carousels)
 
 ## 3. Active Plan
 ### All homepage sections — completed 2026-05-28
 - Hero: real baby photo (green linen romper with deer embroidery)
-- Categorias: real product photos (overoles, kimonos, rompers)
+- Categorias: real product photos (overoles, kimonos, rompers) — now swipeable carousel on mobile
 - Historia: AI-generated artisan embroidery photo (hands + deer motif on sage green linen)
 - Packaging: real photo
+- Productos: shows all 12, "Agregar al carrito" funcional, imagen → PDP
 
 ## 4. Recent Changes
+- 2026-05-28 — TrapitoRelatedProducts: carousel + filtra por tipo de producto (romper/kimono/overol) + acepta productTags prop
+- 2026-05-28 — ProductPageUI: pasa productTags a TrapitoRelatedProducts para filtrar por colección real
+- 2026-05-28 — TrapitoProductos: muestra los 12 productos, renombrado "Nuestros productos", botón "Agregar al carrito" funcional (useCart + openCart), imagen separada del botón para PDP vs carrito
+- 2026-05-28 — TrapitoCategorias: carrusel swipeable en mobile (overflow-x-auto + snap), grid en desktop
+- 2026-05-28 — index.css: añadida clase .scrollbar-none para carruseles
 - 2026-05-28 — Generated artisan embroidery image for TrapitoHistoria (hands + deer on linen hoop), updated component
 - 2026-05-28 — Replaced hero image with user-uploaded real lifestyle photo (baby in green romper with hand embroidery)
 - 2026-05-28 — Generated hero lifestyle image (AI, Gemini) with product references → public/hero-baby.webp, updated TrapitoHero.tsx
@@ -40,11 +47,6 @@
 - 2026-05-27 — Updated Rompers de Lino, Sets Kimono, Overoles collections with new images
 - 2026-05-27 — Updated packaging image in TrapitoPackaging.tsx with user-uploaded real photo
 - 2026-05-27 — Full PDP redesign: Fraunces title, crema/crudo bg, oliva buttons, stars rating
-- 2026-05-27 — Added benefit bullets (OEKO-TEX, bordado a mano, empaque, heredable)
-- 2026-05-27 — Added trust line below CTA (gift, shipping, returns, lock)
-- 2026-05-27 — Added size guide accordion with table (0-3M / 3-6M / 6-12M)
-- 2026-05-27 — Added FAQ accordion (material, artisan, packaging, shipping)
-- 2026-05-27 — Added care instructions accordion (linen-specific washing tips)
 - 2026-05-27 — Added sticky bar redesign: bg-tinta text-crema, CTA = bg-crema text-tinta
 - 2026-05-27 — Created TrapitoRelatedProducts component (fetches 3 related products)
 

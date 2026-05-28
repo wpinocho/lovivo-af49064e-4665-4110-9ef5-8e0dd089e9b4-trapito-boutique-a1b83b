@@ -780,7 +780,10 @@ export const ProductPageUI = ({ logic }: ProductPageUIProps) => {
 
             {/* ——— Related products ——— */}
             {logic.product?.id && (
-              <TrapitoRelatedProducts currentProductId={logic.product.id} />
+              <TrapitoRelatedProducts
+                currentProductId={logic.product.id}
+                productTags={(logic.product as any).tags ?? []}
+              />
             )}
 
           </div>
