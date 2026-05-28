@@ -1,16 +1,16 @@
 const testimonios = [
   {
-    text: 'Lo regalamos en el baby shower de mi hermana y todas preguntaron dónde lo compré. La caja es preciosa.',
+    text: 'Lo regalamos en el baby shower de mi hermana y a todas les gusto mucho.',
     name: 'María F.',
     city: 'CDMX',
   },
   {
-    text: 'Es la primera prenda que mi hijo usó al salir del hospital. La voy a guardar para siempre.',
+    text: 'Me gusto mucho la tela del de venadito. Sigan asi!',
     name: 'Renata L.',
     city: 'Mérida',
   },
   {
-    text: 'Por fin ropa mexicana que no se ve souvenir. Calidad de verdad.',
+    text: 'Por fin ropa mexicana que no se vea comprada en el aeropuerto.',
     name: 'Sofía A.',
     city: 'Monterrey',
   },

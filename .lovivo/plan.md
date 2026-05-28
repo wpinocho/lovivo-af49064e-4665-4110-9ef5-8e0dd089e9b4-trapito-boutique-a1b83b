@@ -39,6 +39,7 @@
 - Related products: full-bleed carousel with card peek on mobile
 
 ## 4. Recent Changes
+- 2026-05-28 — TrapitoTestimonios: updated 3 testimonial texts to more natural/authentic copy
 - 2026-05-28 — PDP sticky bar: bg-tinta solid, single-row mobile (image+title+comprar/price)
 - 2026-05-28 — PDP gallery mobile: full-bleed (-mx-6), reduced top padding, thumbnails with carousel API sync
 - 2026-05-28 — TrapitoRelatedProducts: full-bleed carousel on mobile (-mx-6 + pl-6), card peek with 70vw width
@@ -53,7 +54,6 @@
 - 2026-05-27 — Updated packaging image in TrapitoPackaging.tsx with user-uploaded real photo
 - 2026-05-27 — Full PDP redesign: Fraunces title, crema/crudo bg, oliva buttons, stars rating
 - 2026-05-27 — Added sticky bar redesign: bg-tinta text-crema, CTA = bg-crema text-tinta
-- 2026-05-27 — Created TrapitoRelatedProducts component (fetches 3 related products)
 
 ## 5. Image Inventory
 - Logo: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/temp_1779899822544_9bb8b9d3/1779899822544-i6kkb5mefds.png
