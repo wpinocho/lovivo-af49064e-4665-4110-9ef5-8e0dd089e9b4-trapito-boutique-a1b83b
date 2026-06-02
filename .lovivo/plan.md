@@ -2,7 +2,7 @@
 
 ## 1. Brand & Context
 - Brand name: TRAPITO
-- Product / category: Ropa de bebé premium — rompers, sets kimono, overoles; lino y algodón natural
+- Product / category: Ropa de bebé premium — rompers, conjuntos de lino, overoles; lino y algodón natural
 - Target audience: Madres mexicanas 25-38 años, baby showers, regalos de recién nacido, compradores conscientes
 - Market / region: México (CDMX, Monterrey, Guadalajara, Mérida). Envío nacional.
 - Tone & voice: Cálido, editorial, íntimo. No folclórico. No agresivo. Estética Konges Sløjd × Mi Golondrina × Liewood.
@@ -11,7 +11,7 @@
   - Lino + algodón OEKO-TEX, bordado a mano por artesanos
   - Empaque de regalo premium incluido
   - Prendas heredables, para guardar y pasar
-  - 0-12 meses, 3 siluetas: romper / set kimono / overol
+  - 0-12 meses, 3 siluetas: romper / conjuntos de lino (camisa+bloomer) / overol
 
 ## 2. Design System
 - Colors (HSL CSS vars): crema(33 57% 92%), crudo(34 43% 88%), lino(33 39% 82%), rosa-polvo(3 57% 80%), vino(342 47% 33%), oliva(72 36% 34%), oliva-oscuro(73 36% 25%), mostaza(38 60% 56%), verde-tenue(110 23% 74%), tinta(20 9% 15%), tinta-suave(21 16% 37%)
@@ -28,7 +28,7 @@
 ## 3. Active Plan
 ### All homepage sections — completed 2026-05-28
 - Hero: real baby photo (green linen romper with deer embroidery)
-- Categorias: real product photos (overoles, kimonos, rompers) — swipeable carousel on mobile
+- Categorias: real product photos (overoles, conjuntos de lino, rompers) — swipeable carousel on mobile
 - Historia: AI-generated artisan embroidery photo (hands + deer motif on sage green linen)
 - Packaging: real photo
 - Productos: shows all 12, "Agregar al carrito" funcional, imagen → PDP
@@ -39,6 +39,7 @@
 - Related products: full-bleed carousel with card peek on mobile
 
 ## 4. Recent Changes
+- 2026-06-02 — TrapitoCategorias: nuevas imágenes reales de las 3 categorías + "Sets kimono" renombrado a "Conjuntos de lino" (camisa henley + bloomer)
 - 2026-05-28 — TrapitoTestimonios: updated 3 testimonial texts to more natural/authentic copy
 - 2026-05-28 — PDP sticky bar: bg-tinta solid, single-row mobile (image+title+comprar/price)
 - 2026-05-28 — PDP gallery mobile: full-bleed (-mx-6), reduced top padding, thumbnails with carousel API sync
@@ -53,16 +54,15 @@
 - 2026-05-27 — Generated 3 collection images (flatlay editorial) using product references
 - 2026-05-27 — Updated packaging image in TrapitoPackaging.tsx with user-uploaded real photo
 - 2026-05-27 — Full PDP redesign: Fraunces title, crema/crudo bg, oliva buttons, stars rating
-- 2026-05-27 — Added sticky bar redesign: bg-tinta text-crema, CTA = bg-crema text-tinta
 
 ## 5. Image Inventory
 - Logo: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/temp_1779899822544_9bb8b9d3/1779899822544-i6kkb5mefds.png
 - **Hero baby (REAL PHOTO)**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/2951759c-e79e-4fd2-b408-bf60182e438e/1779985000373-sw44cedayzi.webp
 - **Brand Story (AI — artisan hands)**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/product-images/af49064e-4665-4110-9ef5-8e0dd089e9b4/brand-story.webp
 - Packaging (REAL PHOTO): https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/2951759c-e79e-4fd2-b408-bf60182e438e/1779907514878-iifo91wm43.webp
-- **Collection Overoles (REAL)**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/2951759c-e79e-4fd2-b408-bf60182e438e/1779981567518-ch4t0nk71gt.webp
-- **Collection Kimono (REAL)**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/2951759c-e79e-4fd2-b408-bf60182e438e/1779981567518-ktiddj8yec9.webp
-- **Collection Rompers (REAL)**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/2951759c-e79e-4fd2-b408-bf60182e438e/1779981567518-8p77etf0262.webp
+- **Collection Overoles (REAL — new)**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/2951759c-e79e-4fd2-b408-bf60182e438e/1780434644279-ljqrm7rcf2i.webp
+- **Collection Conjuntos de lino (REAL — new)**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/2951759c-e79e-4fd2-b408-bf60182e438e/1780434644279-svol4owvr5.webp
+- **Collection Rompers (REAL — new)**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/2951759c-e79e-4fd2-b408-bf60182e438e/1780434644279-mgic12rq78r.webp
 - Products: All 12 products have individual multi-image galleries (5 images each)
 
 ## 6. Known Issues

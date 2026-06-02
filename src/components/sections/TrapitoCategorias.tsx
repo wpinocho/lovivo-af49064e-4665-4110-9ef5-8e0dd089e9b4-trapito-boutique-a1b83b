@@ -1,22 +1,22 @@
 const categories = [
   {
-    name: 'Rompers de lino',
-    desc: 'Peleles sin manga con bordados mexicanos. Frescos y fáciles de poner.',
-    image: 'https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/2951759c-e79e-4fd2-b408-bf60182e438e/1779981567518-8p77etf0262.webp',
-    href: '/#productos',
-    badge: '4 modelos',
-  },
-  {
-    name: 'Sets kimono',
-    desc: 'Blusa cruzada con bloomer a juego. Suaves para los primeros meses.',
-    image: 'https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/2951759c-e79e-4fd2-b408-bf60182e438e/1779981567518-ktiddj8yec9.webp',
-    href: '/#productos',
-    badge: '4 modelos',
-  },
-  {
     name: 'Overoles',
-    desc: 'Tirantes ajustables con bolsa frontal bordada. Para crecer cómodos.',
-    image: 'https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/2951759c-e79e-4fd2-b408-bf60182e438e/1779981567518-ch4t0nk71gt.webp',
+    desc: 'Peto de lino con hombros ajustables y bordado artesanal al frente. Cómodos para gatear y explorar.',
+    image: 'https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/2951759c-e79e-4fd2-b408-bf60182e438e/1780434644279-ljqrm7rcf2i.webp',
+    href: '/#productos',
+    badge: '4 modelos',
+  },
+  {
+    name: 'Conjuntos de lino',
+    desc: 'Camisa henley con bloomer a juego. Bordados únicos adelante y atrás. El conjunto más completo de la colección.',
+    image: 'https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/2951759c-e79e-4fd2-b408-bf60182e438e/1780434644279-svol4owvr5.webp',
+    href: '/#productos',
+    badge: '4 modelos',
+  },
+  {
+    name: 'Rompers de lino',
+    desc: 'Pelele sin manga con botones de nácar y bordado mexicano. Fresquito y fácil de poner.',
+    image: 'https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/2951759c-e79e-4fd2-b408-bf60182e438e/1780434644279-mgic12rq78r.webp',
     href: '/#productos',
     badge: '4 modelos',
   },
