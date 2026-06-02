@@ -33,6 +33,7 @@
 - Decisión pendiente del owner antes de implementar
 
 ## 4. Recent Changes
+- 2026-06-02 — TrapitoHistoria: nueva imagen lifestyle (bebé dormido en conjunto lino verde+chile bordado, brazos mamá, luz natural)
 - 2026-06-02 — TrapitoPackaging: imagen de empaque reemplazada con nueva foto (conjunto lino crema+verde+chile bordado en caja abierta)
 - 2026-06-02 — COMPLETADO: Eliminadas todas las menciones de "bordado a mano" en 3 archivos (Hero badge, Hero alt, Historia copy+alt, PDP benefit bullet)
 - 2026-06-02 — TrapitoCategorias: nuevas imágenes reales de las 3 categorías + "Sets kimono" renombrado a "Conjuntos de lino"
@@ -47,24 +48,22 @@
 - 2026-05-28 — index.css: añadida clase .scrollbar-none para carruseles
 - 2026-05-28 — Generated artisan embroidery image for TrapitoHistoria (hands + deer on linen hoop)
 - 2026-05-28 — Replaced hero image with user-uploaded real lifestyle photo (baby in green romper)
-- 2026-05-27 — Generated 3 collection images (flatlay editorial) using product references
 
 ## 5. Image Inventory
 - Logo: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/temp_1779899822544_9bb8b9d3/1779899822544-i6kkb5mefds.png
 - **Hero baby (REAL PHOTO)**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/2951759c-e79e-4fd2-b408-bf60182e438e/1779985000373-sw44cedayzi.webp
-- **Brand Story (AI — artisan hands)**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/product-images/af49064e-4665-4110-9ef5-8e0dd089e9b4/brand-story.webp ⚠️ Muestra manos bordando — podría generar expectativa de bordado a mano. Considerar reemplazar.
+- **Historia Lifestyle (AI — NEW)**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/product-images/af49064e-4665-4110-9ef5-8e0dd089e9b4/historia-lifestyle.webp — Bebé dormido en conjunto lino verde+chile, brazos mamá, luz ventana
+- **Brand Story OLD (DEPRECATED)**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/product-images/af49064e-4665-4110-9ef5-8e0dd089e9b4/brand-story.webp ⚠️ Ya no se usa — mostraba manos bordando
 - **Packaging (REAL PHOTO — nueva)**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/2951759c-e79e-4fd2-b408-bf60182e438e/1780441100857-hzp3nn512i4.webp
 - **Collection Overoles (REAL — new)**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/2951759c-e79e-4fd2-b408-bf60182e438e/1780434644279-ljqrm7rcf2i.webp
 - **Collection Conjuntos de lino (REAL — new)**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/2951759c-e79e-4fd2-b408-bf60182e438e/1780434644279-svol4owvr5.webp
 - **Collection Rompers (REAL — new)**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/2951759c-e79e-4fd2-b408-bf60182e438e/1780434644279-mgic12rq78r.webp
-- Products: All 12 products have individual multi-image galleries (5 images each)
+- Products: All 6 products have individual multi-image galleries
 
 ## 6. Known Issues
 - 2026-05-27 — EcommerceTemplate header now has bg-crema — if homepage also renders it, may cause double header. But IndexUI wraps its own header, so EcommerceTemplate header is hidden on homepage. OK.
-- 2026-06-02 — La imagen de TrapitoHistoria (brand-story.webp) muestra "manos bordando" — genera falsa expectativa de bordado a mano. Considerar reemplazar con imagen que muestre el DISEÑO/MOTIVO más que el proceso.
 
 ## 7. Pending / Future Sessions
-- [HIGH] Reemplazar imagen brand-story.webp de TrapitoHistoria — actualmente muestra manos bordando (implica manual). Mejor: primer plano del motivo bordado sobre la tela, o bebé usando la prenda.
 - [high] Mejoras PDP: reseñas con fotos, sección unboxing, o historia de prenda (definir con owner)
 - [high] Style Cart and Checkout pages with Trapito design
 - [med] Add scroll-triggered fade-in animations (Intersection Observer)
