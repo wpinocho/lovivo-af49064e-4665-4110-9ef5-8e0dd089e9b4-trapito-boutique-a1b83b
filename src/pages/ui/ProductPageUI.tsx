@@ -87,7 +87,7 @@ const StarRating = () => (
 
 const BENEFITS = [
   { icon: Leaf, benefit: "Lino + algodón OEKO-TEX", feature: "Sin químicos en piel sensible" },
-  { icon: Sparkles, benefit: "Bordado a mano", feature: "Por artesanos mexicanos" },
+  { icon: Sparkles, benefit: "Diseño mexicano exclusivo", feature: "Iconografía de la tradición artesanal" },
   { icon: Gift, benefit: "Empaque de regalo premium", feature: "Incluido sin costo adicional" },
   { icon: Heart, benefit: "Pieza heredable", feature: "Para guardar y pasar de generación" },
 ]

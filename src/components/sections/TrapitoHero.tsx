@@ -60,14 +60,14 @@ export const TrapitoHero = () => {
               <div className="aspect-[4/5] rounded-3xl overflow-hidden bg-verde-tenue">
                 <img
                   src="https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/2951759c-e79e-4fd2-b408-bf60182e438e/1779985000373-sw44cedayzi.webp"
-                  alt="Bebé recién nacido durmiendo con romper de lino verde bordado a mano de Trapito"
+                  alt="Bebé recién nacido durmiendo con romper de lino verde con bordados mexicanos de Trapito"
                   className="w-full h-full object-cover"
                   loading="eager"
                 />
               </div>
               {/* Decorative badge */}
               <div className="absolute -bottom-4 -left-4 bg-rosa-polvo rounded-2xl px-4 py-3 shadow-sm">
-                <p className="font-fraunces text-vino text-sm font-medium leading-tight">Bordado<br />a mano</p>
+                <p className="font-fraunces text-vino text-sm font-medium leading-tight">Motivos<br />mexicanos</p>
               </div>
               <div className="absolute -top-3 -right-3 bg-crudo rounded-full h-16 w-16 flex items-center justify-center shadow-sm">
                 <p className="font-fraunces text-oliva text-[10px] text-center leading-tight font-medium">100%<br />lino</p>

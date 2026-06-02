@@ -28,32 +28,13 @@
 - `.scrollbar-none` utility added to index.css (hide scrollbar for carousels)
 
 ## 3. Active Plan
-### Eliminar "bordado a mano" de toda la tienda — PENDING
-
-**Archivos a modificar:**
-
-#### A) `src/components/sections/TrapitoHero.tsx`
-1. Badge (línea ~70): cambiar `"Bordado\na mano"` → `"Motivos\nmexicanos"`
-2. Alt text (línea ~63): cambiar `"bordado a mano de Trapito"` → `"con bordados mexicanos de Trapito"`
-
-#### B) `src/components/sections/TrapitoHistoria.tsx`
-1. Párrafo 1 (línea ~28): cambiar `"bordados hechos a mano que cuentan pedacitos de México: el caimán del pantano, la bugambilia del patio, el maíz del campo."` → `"bordados con iconografía de la tradición artesanal mexicana: el caimán del pantano, la bugambilia del patio, el maíz del campo."`
-2. Alt text (línea ~12): cambiar `"Manos de artesana bordando a mano un venado en lino verde — proceso artesanal Trapito"` → `"Bordados con motivos de la tradición mexicana sobre lino verde — Trapito"`
-
-#### C) `src/pages/ui/ProductPageUI.tsx`
-1. BENEFITS array (línea ~90): cambiar:
-   - `benefit: "Bordado a mano"` → `benefit: "Diseño mexicano exclusivo"`
-   - `feature: "Por artesanos mexicanos"` → `feature: "Iconografía de la tradición artesanal"`
-
-### All homepage sections — completed 2026-05-28
-- Hero, Categorias, Historia, Packaging, Productos — all done
-
-### PDP mobile — completed 2026-05-28
-- Gallery, sticky bar, related products — all done
+### Próximas mejoras PDP — PENDING
+- Propuestas: (1) Reseñas con fotos + estrellas, (2) sección "Así llega tu pedido", (3) historia de la prenda
+- Decisión pendiente del owner antes de implementar
 
 ## 4. Recent Changes
-- 2026-06-02 — PLAN: eliminar todas las menciones de "bordado a mano" — 4 lugares identificados (Hero badge, Hero alt, Historia copy, PDP benefit bullet)
-- 2026-06-02 — TrapitoCategorias: nuevas imágenes reales de las 3 categorías + "Sets kimono" renombrado a "Conjuntos de lino" (camisa henley + bloomer)
+- 2026-06-02 — COMPLETADO: Eliminadas todas las menciones de "bordado a mano" en 3 archivos (Hero badge, Hero alt, Historia copy+alt, PDP benefit bullet)
+- 2026-06-02 — TrapitoCategorias: nuevas imágenes reales de las 3 categorías + "Sets kimono" renombrado a "Conjuntos de lino"
 - 2026-05-28 — TrapitoTestimonios: updated 3 testimonial texts to more natural/authentic copy
 - 2026-05-28 — PDP sticky bar: bg-tinta solid, single-row mobile (image+title+comprar/price)
 - 2026-05-28 — PDP gallery mobile: full-bleed (-mx-6), reduced top padding, thumbnails with carousel API sync
@@ -67,12 +48,11 @@
 - 2026-05-28 — Replaced hero image with user-uploaded real lifestyle photo (baby in green romper)
 - 2026-05-27 — Generated 3 collection images (flatlay editorial) using product references
 - 2026-05-27 — Updated packaging image in TrapitoPackaging.tsx with user-uploaded real photo
-- 2026-05-27 — Full PDP redesign: Fraunces title, crema/crudo bg, oliva buttons, stars rating
 
 ## 5. Image Inventory
 - Logo: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/temp_1779899822544_9bb8b9d3/1779899822544-i6kkb5mefds.png
 - **Hero baby (REAL PHOTO)**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/2951759c-e79e-4fd2-b408-bf60182e438e/1779985000373-sw44cedayzi.webp
-- **Brand Story (AI — artisan hands)**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/product-images/af49064e-4665-4110-9ef5-8e0dd089e9b4/brand-story.webp
+- **Brand Story (AI — artisan hands)**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/product-images/af49064e-4665-4110-9ef5-8e0dd089e9b4/brand-story.webp ⚠️ Muestra manos bordando — podría generar expectativa de bordado a mano. Considerar reemplazar.
 - Packaging (REAL PHOTO): https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/2951759c-e79e-4fd2-b408-bf60182e438e/1779907514878-iifo91wm43.webp
 - **Collection Overoles (REAL — new)**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/2951759c-e79e-4fd2-b408-bf60182e438e/1780434644279-ljqrm7rcf2i.webp
 - **Collection Conjuntos de lino (REAL — new)**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/2951759c-e79e-4fd2-b408-bf60182e438e/1780434644279-svol4owvr5.webp
@@ -84,7 +64,8 @@
 - 2026-06-02 — La imagen de TrapitoHistoria (brand-story.webp) muestra "manos bordando" — genera falsa expectativa de bordado a mano. Considerar reemplazar con imagen que muestre el DISEÑO/MOTIVO más que el proceso.
 
 ## 7. Pending / Future Sessions
-- [HIGH] Eliminar "bordado a mano" — 3 archivos: TrapitoHero.tsx, TrapitoHistoria.tsx, ProductPageUI.tsx
+- [HIGH] Reemplazar imagen brand-story.webp de TrapitoHistoria — actualmente muestra manos bordando (implica manual). Mejor: primer plano del motivo bordado sobre la tela, o bebé usando la prenda.
+- [high] Mejoras PDP: reseñas con fotos, sección unboxing, o historia de prenda (definir con owner)
 - [high] Style Cart and Checkout pages with Trapito design
 - [med] Add scroll-triggered fade-in animations (Intersection Observer)
 - [med] Mobile nav refinements (hamburger menu for EcommerceTemplate)
