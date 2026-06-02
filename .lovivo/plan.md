@@ -33,6 +33,7 @@
 - Decisión pendiente del owner antes de implementar
 
 ## 4. Recent Changes
+- 2026-06-02 — TrapitoHistoria: imagen v2 generada CON reference_images reales del Kit de chile — bebé despierto en brazos, conjunto verde+chile bordeado visible, luz ventana, match perfecto con producto real
 - 2026-06-02 — TrapitoHistoria: nueva imagen lifestyle (bebé dormido en conjunto lino verde+chile bordado, brazos mamá, luz natural)
 - 2026-06-02 — TrapitoPackaging: imagen de empaque reemplazada con nueva foto (conjunto lino crema+verde+chile bordado en caja abierta)
 - 2026-06-02 — COMPLETADO: Eliminadas todas las menciones de "bordado a mano" en 3 archivos (Hero badge, Hero alt, Historia copy+alt, PDP benefit bullet)
@@ -47,21 +48,22 @@
 - 2026-05-28 — TrapitoCategorias: carrusel swipeable en mobile (overflow-x-auto + snap), grid en desktop
 - 2026-05-28 — index.css: añadida clase .scrollbar-none para carruseles
 - 2026-05-28 — Generated artisan embroidery image for TrapitoHistoria (hands + deer on linen hoop)
-- 2026-05-28 — Replaced hero image with user-uploaded real lifestyle photo (baby in green romper)
 
 ## 5. Image Inventory
 - Logo: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/temp_1779899822544_9bb8b9d3/1779899822544-i6kkb5mefds.png
 - **Hero baby (REAL PHOTO)**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/2951759c-e79e-4fd2-b408-bf60182e438e/1779985000373-sw44cedayzi.webp
-- **Historia Lifestyle (AI — NEW)**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/product-images/af49064e-4665-4110-9ef5-8e0dd089e9b4/historia-lifestyle.webp — Bebé dormido en conjunto lino verde+chile, brazos mamá, luz ventana
+- **Historia Lifestyle v2 (AI — CON referencia real)**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/product-images/af49064e-4665-4110-9ef5-8e0dd089e9b4/historia-lifestyle-v2.webp — Bebé despierto en brazos mamá, conjunto verde chile REAL, luz ventana, editorial
+- **Historia Lifestyle v1 (DEPRECATED)**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/product-images/af49064e-4665-4110-9ef5-8e0dd089e9b4/historia-lifestyle.webp ⚠️ Sin referencia real — reemplazada por v2
 - **Brand Story OLD (DEPRECATED)**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/product-images/af49064e-4665-4110-9ef5-8e0dd089e9b4/brand-story.webp ⚠️ Ya no se usa — mostraba manos bordando
 - **Packaging (REAL PHOTO — nueva)**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/2951759c-e79e-4fd2-b408-bf60182e438e/1780441100857-hzp3nn512i4.webp
 - **Collection Overoles (REAL — new)**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/2951759c-e79e-4fd2-b408-bf60182e438e/1780434644279-ljqrm7rcf2i.webp
 - **Collection Conjuntos de lino (REAL — new)**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/2951759c-e79e-4fd2-b408-bf60182e438e/1780434644279-svol4owvr5.webp
 - **Collection Rompers (REAL — new)**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/2951759c-e79e-4fd2-b408-bf60182e438e/1780434644279-mgic12rq78r.webp
-- Products: All 6 products have individual multi-image galleries
+- Products: All 12 products have individual multi-image galleries
 
 ## 6. Known Issues
 - 2026-05-27 — EcommerceTemplate header now has bg-crema — if homepage also renders it, may cause double header. But IndexUI wraps its own header, so EcommerceTemplate header is hidden on homepage. OK.
+- ⚠️ PROTOCOLO IMAGEGEN: SIEMPRE usar ecommerce--list-data(type='products') primero + pasar reference_images reales al generar imágenes con productos. Sin referencia → imagen genérica que no se parece al producto.
 
 ## 7. Pending / Future Sessions
 - [high] Mejoras PDP: reseñas con fotos, sección unboxing, o historia de prenda (definir con owner)
