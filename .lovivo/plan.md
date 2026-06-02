@@ -33,6 +33,7 @@
 - Decisión pendiente del owner antes de implementar
 
 ## 4. Recent Changes
+- 2026-06-02 — TrapitoPackaging: imagen de empaque reemplazada con nueva foto (conjunto lino crema+verde+chile bordado en caja abierta)
 - 2026-06-02 — COMPLETADO: Eliminadas todas las menciones de "bordado a mano" en 3 archivos (Hero badge, Hero alt, Historia copy+alt, PDP benefit bullet)
 - 2026-06-02 — TrapitoCategorias: nuevas imágenes reales de las 3 categorías + "Sets kimono" renombrado a "Conjuntos de lino"
 - 2026-05-28 — TrapitoTestimonios: updated 3 testimonial texts to more natural/authentic copy
@@ -47,13 +48,12 @@
 - 2026-05-28 — Generated artisan embroidery image for TrapitoHistoria (hands + deer on linen hoop)
 - 2026-05-28 — Replaced hero image with user-uploaded real lifestyle photo (baby in green romper)
 - 2026-05-27 — Generated 3 collection images (flatlay editorial) using product references
-- 2026-05-27 — Updated packaging image in TrapitoPackaging.tsx with user-uploaded real photo
 
 ## 5. Image Inventory
 - Logo: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/temp_1779899822544_9bb8b9d3/1779899822544-i6kkb5mefds.png
 - **Hero baby (REAL PHOTO)**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/2951759c-e79e-4fd2-b408-bf60182e438e/1779985000373-sw44cedayzi.webp
 - **Brand Story (AI — artisan hands)**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/product-images/af49064e-4665-4110-9ef5-8e0dd089e9b4/brand-story.webp ⚠️ Muestra manos bordando — podría generar expectativa de bordado a mano. Considerar reemplazar.
-- Packaging (REAL PHOTO): https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/2951759c-e79e-4fd2-b408-bf60182e438e/1779907514878-iifo91wm43.webp
+- **Packaging (REAL PHOTO — nueva)**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/2951759c-e79e-4fd2-b408-bf60182e438e/1780441100857-hzp3nn512i4.webp
 - **Collection Overoles (REAL — new)**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/2951759c-e79e-4fd2-b408-bf60182e438e/1780434644279-ljqrm7rcf2i.webp
 - **Collection Conjuntos de lino (REAL — new)**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/2951759c-e79e-4fd2-b408-bf60182e438e/1780434644279-svol4owvr5.webp
 - **Collection Rompers (REAL — new)**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/2951759c-e79e-4fd2-b408-bf60182e438e/1780434644279-mgic12rq78r.webp

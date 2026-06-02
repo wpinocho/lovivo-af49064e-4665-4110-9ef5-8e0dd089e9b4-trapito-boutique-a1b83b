@@ -42,8 +42,8 @@ export const TrapitoPackaging = () => {
           <div>
             <div className="aspect-square rounded-3xl overflow-hidden bg-crudo">
               <img
-                src="https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/2951759c-e79e-4fd2-b408-bf60182e438e/1779907514878-iifo91wm43.webp"
-                alt="Caja de regalo premium Trapito con papel seda estampado y prenda de bebé"
+                src="https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/2951759c-e79e-4fd2-b408-bf60182e438e/1780441100857-hzp3nn512i4.webp"
+                alt="Caja de regalo premium Trapito abierta con conjunto de lino crema y verde oliva, papel seda estampado, bolsita de manta y tarjeta de agradecimiento"
                 className="w-full h-full object-cover"
                 loading="lazy"
               />
