@@ -7,11 +7,13 @@
 - Market / region: México (CDMX, Monterrey, Guadalajara, Mérida). Envío nacional.
 - Tone & voice: Cálido, editorial, íntimo. No folclórico. No agresivo. Estética Konges Sløjd × Mi Golondrina × Liewood.
 - Key positioning bullets:
-  - "Babywear mexicano contemporáneo" — no souvenir, sí artesanía auténtica
-  - Lino + algodón OEKO-TEX, bordado a mano por artesanos
+  - "Babywear mexicano contemporáneo" — no souvenir, sí iconografía artesanal
+  - Lino + algodón OEKO-TEX
+  - Bordados con motivos de la tradición artesanal mexicana (NO son a mano — NO decir "bordado a mano")
   - Empaque de regalo premium incluido
   - Prendas heredables, para guardar y pasar
   - 0-12 meses, 3 siluetas: romper / conjuntos de lino (camisa+bloomer) / overol
+- ⚠️ REGLA DE COPY: NUNCA decir "bordado a mano", "hecho a mano", "artesanos" como autores del bordado. El bordado es por máquina pero con DISEÑOS de iconografía artesanal mexicana auténtica.
 
 ## 2. Design System
 - Colors (HSL CSS vars): crema(33 57% 92%), crudo(34 43% 88%), lino(33 39% 82%), rosa-polvo(3 57% 80%), vino(342 47% 33%), oliva(72 36% 34%), oliva-oscuro(73 36% 25%), mostaza(38 60% 56%), verde-tenue(110 23% 74%), tinta(20 9% 15%), tinta-suave(21 16% 37%)
@@ -22,23 +24,35 @@
 - Cards: rounded-2xl; Hero images: rounded-3xl; Buttons: rounded-sm
 - Background: always crema or crudo — NEVER white
 - Shadows: imperceptible / none
-- Copy rules: NEVER em dash; NEVER all-caps except eyebrows; max 2 fonts
+- Copy rules: NEVER em dash; NEVER all-caps except eyebrows; max 2 fonts; NEVER "bordado a mano"
 - `.scrollbar-none` utility added to index.css (hide scrollbar for carousels)
 
 ## 3. Active Plan
+### Eliminar "bordado a mano" de toda la tienda — PENDING
+
+**Archivos a modificar:**
+
+#### A) `src/components/sections/TrapitoHero.tsx`
+1. Badge (línea ~70): cambiar `"Bordado\na mano"` → `"Motivos\nmexicanos"`
+2. Alt text (línea ~63): cambiar `"bordado a mano de Trapito"` → `"con bordados mexicanos de Trapito"`
+
+#### B) `src/components/sections/TrapitoHistoria.tsx`
+1. Párrafo 1 (línea ~28): cambiar `"bordados hechos a mano que cuentan pedacitos de México: el caimán del pantano, la bugambilia del patio, el maíz del campo."` → `"bordados con iconografía de la tradición artesanal mexicana: el caimán del pantano, la bugambilia del patio, el maíz del campo."`
+2. Alt text (línea ~12): cambiar `"Manos de artesana bordando a mano un venado en lino verde — proceso artesanal Trapito"` → `"Bordados con motivos de la tradición mexicana sobre lino verde — Trapito"`
+
+#### C) `src/pages/ui/ProductPageUI.tsx`
+1. BENEFITS array (línea ~90): cambiar:
+   - `benefit: "Bordado a mano"` → `benefit: "Diseño mexicano exclusivo"`
+   - `feature: "Por artesanos mexicanos"` → `feature: "Iconografía de la tradición artesanal"`
+
 ### All homepage sections — completed 2026-05-28
-- Hero: real baby photo (green linen romper with deer embroidery)
-- Categorias: real product photos (overoles, conjuntos de lino, rompers) — swipeable carousel on mobile
-- Historia: AI-generated artisan embroidery photo (hands + deer motif on sage green linen)
-- Packaging: real photo
-- Productos: shows all 12, "Agregar al carrito" funcional, imagen → PDP
+- Hero, Categorias, Historia, Packaging, Productos — all done
 
 ### PDP mobile — completed 2026-05-28
-- Gallery: full-bleed on mobile (-mx-6), thumbnails below carousel with API sync
-- Sticky bar: solid bg-tinta (no opacity), single-row layout on mobile
-- Related products: full-bleed carousel with card peek on mobile
+- Gallery, sticky bar, related products — all done
 
 ## 4. Recent Changes
+- 2026-06-02 — PLAN: eliminar todas las menciones de "bordado a mano" — 4 lugares identificados (Hero badge, Hero alt, Historia copy, PDP benefit bullet)
 - 2026-06-02 — TrapitoCategorias: nuevas imágenes reales de las 3 categorías + "Sets kimono" renombrado a "Conjuntos de lino" (camisa henley + bloomer)
 - 2026-05-28 — TrapitoTestimonios: updated 3 testimonial texts to more natural/authentic copy
 - 2026-05-28 — PDP sticky bar: bg-tinta solid, single-row mobile (image+title+comprar/price)
@@ -67,8 +81,10 @@
 
 ## 6. Known Issues
 - 2026-05-27 — EcommerceTemplate header now has bg-crema — if homepage also renders it, may cause double header. But IndexUI wraps its own header, so EcommerceTemplate header is hidden on homepage. OK.
+- 2026-06-02 — La imagen de TrapitoHistoria (brand-story.webp) muestra "manos bordando" — genera falsa expectativa de bordado a mano. Considerar reemplazar con imagen que muestre el DISEÑO/MOTIVO más que el proceso.
 
 ## 7. Pending / Future Sessions
+- [HIGH] Eliminar "bordado a mano" — 3 archivos: TrapitoHero.tsx, TrapitoHistoria.tsx, ProductPageUI.tsx
 - [high] Style Cart and Checkout pages with Trapito design
 - [med] Add scroll-triggered fade-in animations (Intersection Observer)
 - [med] Mobile nav refinements (hamburger menu for EcommerceTemplate)
