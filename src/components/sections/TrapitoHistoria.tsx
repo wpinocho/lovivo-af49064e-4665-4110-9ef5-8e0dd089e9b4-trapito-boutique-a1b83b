@@ -8,7 +8,7 @@ export const TrapitoHistoria = () => {
           <div className="order-2 lg:order-1">
             <div className="aspect-[4/5] rounded-3xl overflow-hidden bg-verde-tenue">
               <img
-                src="https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/product-images/af49064e-4665-4110-9ef5-8e0dd089e9b4/historia-lifestyle-v3.webp"
+                src="https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/product-images/af49064e-4665-4110-9ef5-8e0dd089e9b4/historia-lifestyle-v4.webp"
                 alt="Bebé en brazos sostenido por mamá, usando conjunto de lino verde con chile bordado — Trapito"
                 className="w-full h-full object-cover"
                 loading="lazy"

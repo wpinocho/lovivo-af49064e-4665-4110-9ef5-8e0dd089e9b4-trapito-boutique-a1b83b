@@ -33,6 +33,7 @@
 - Decisión pendiente del owner antes de implementar
 
 ## 4. Recent Changes
+- 2026-06-03 — TrapitoHistoria: imagen v4 generada CON 4 reference_images reales (Kit de chile) — bebé recién nacido en brazos de mamá, camisa crema con chile bordado en pecho, short verde sage con chile bordado, luz ventana perfecta, fondo lino crema
 - 2026-06-02 — TrapitoHistoria: imagen v3 generada CON reference_images reales (4 fotos Kit de chile) — bebé en lino verde con chile bordado visible en camisa Y short, manos mamá sobre sábana crema, luz ventana perfecta
 - 2026-06-02 — TrapitoHistoria: imagen v2 generada CON reference_images reales del Kit de chile — bebé despierto en brazos, conjunto verde+chile bordeado visible, luz ventana, match perfecto con producto real
 - 2026-06-02 — TrapitoHistoria: nueva imagen lifestyle (bebé dormido en conjunto lino verde+chile bordado, brazos mamá, luz natural)
@@ -47,12 +48,12 @@
 - 2026-05-28 — ProductPageUI: pasa productTags a TrapitoRelatedProducts para filtrar por colección real
 - 2026-05-28 — TrapitoProductos: muestra los 12 productos, renombrado "Nuestros productos", botón "Agregar al carrito" funcional (useCart + openCart)
 - 2026-05-28 — TrapitoCategorias: carrusel swipeable en mobile (overflow-x-auto + snap), grid en desktop
-- 2026-05-28 — index.css: añadida clase .scrollbar-none para carruseles
 
 ## 5. Image Inventory
 - Logo: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/temp_1779899822544_9bb8b9d3/1779899822544-i6kkb5mefds.png
 - **Hero baby (REAL PHOTO)**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/2951759c-e79e-4fd2-b408-bf60182e438e/1779985000373-sw44cedayzi.webp
-- **Historia Lifestyle v3 (AI — CON 4 reference_images reales Kit de chile)**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/product-images/af49064e-4665-4110-9ef5-8e0dd089e9b4/historia-lifestyle-v3.webp — Bebé en lino verde, chile bordado en camisa Y short, manos mamá, sábana crema, ventana. ✅ ACTIVA
+- **Historia Lifestyle v4 (AI — CON 4 reference_images reales Kit de chile)**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/product-images/af49064e-4665-4110-9ef5-8e0dd089e9b4/historia-lifestyle-v4.webp — Bebé recién nacido en brazos mamá, camisa crema+chile bordado, short verde sage+chile bordado, luz ventana, lino crema. ✅ ACTIVA
+- **Historia Lifestyle v3 (DEPRECATED)**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/product-images/af49064e-4665-4110-9ef5-8e0dd089e9b4/historia-lifestyle-v3.webp ⚠️ Reemplazada por v4
 - **Historia Lifestyle v2 (DEPRECATED)**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/product-images/af49064e-4665-4110-9ef5-8e0dd089e9b4/historia-lifestyle-v2.webp ⚠️ Reemplazada por v3
 - **Historia Lifestyle v1 (DEPRECATED)**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/product-images/af49064e-4665-4110-9ef5-8e0dd089e9b4/historia-lifestyle.webp ⚠️ Sin referencia real
 - **Brand Story OLD (DEPRECATED)**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/product-images/af49064e-4665-4110-9ef5-8e0dd089e9b4/brand-story.webp ⚠️ Ya no se usa
