@@ -33,6 +33,7 @@
 - Decisión pendiente del owner antes de implementar
 
 ## 4. Recent Changes
+- 2026-06-04 — Precios de VARIANTES corregidos en los 8 productos afectados: 4 Kits (variantes $1,190) + 4 Overoles (variantes $990). Bug: antes solo se actualizaba el precio del producto base, no el de las variantes; la PDP usaba precio de variante.
 - 2026-06-03 — Precios actualizados: 4 Kits $1,190 / 4 Overoles $990 / 4 Rompers $890 (ya estaban)
 - 2026-06-03 — TrapitoHistoria: imagen v4 generada CON 4 reference_images reales (Kit de chile) — bebé recién nacido en brazos de mamá, camisa crema con chile bordado en pecho, short verde sage con chile bordado, luz ventana perfecta, fondo lino crema
 - 2026-06-02 — TrapitoHistoria: imagen v3 generada CON reference_images reales (4 fotos Kit de chile) — bebé en lino verde con chile bordado visible en camisa Y short, manos mamá sobre sábana crema, luz ventana perfecta
@@ -47,7 +48,6 @@
 - 2026-05-28 — TrapitoRelatedProducts: full-bleed carousel on mobile (-mx-6 + pl-6), card peek with 70vw width
 - 2026-05-28 — TrapitoRelatedProducts: carousel + filtra por tipo de producto (romper/kimono/overol) + acepta productTags prop
 - 2026-05-28 — ProductPageUI: pasa productTags a TrapitoRelatedProducts para filtrar por colección real
-- 2026-05-28 — TrapitoProductos: muestra los 12 productos, renombrado "Nuestros productos", botón "Agregar al carrito" funcional (useCart + openCart)
 
 ## 5. Image Inventory
 - Logo: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/temp_1779899822544_9bb8b9d3/1779899822544-i6kkb5mefds.png
@@ -65,6 +65,7 @@
 
 ## 6. Known Issues
 - 2026-05-27 — EcommerceTemplate header now has bg-crema — if homepage also renders it, may cause double header. But IndexUI wraps its own header, so EcommerceTemplate header is hidden on homepage. OK.
+- ⚠️ PROTOCOLO PRECIOS: Al actualizar precios, siempre actualizar TANTO `price` del producto COMO `variants_config` con los precios de cada variante. La PDP usa el precio de la variante; la landing usa el precio del producto.
 - ⚠️ PROTOCOLO IMAGEGEN: SIEMPRE usar ecommerce--list-data(type='products') primero + pasar reference_images reales al generar imágenes con productos. Sin referencia → imagen genérica que no se parece al producto.
 
 ## 7. Pending / Future Sessions
