@@ -34,7 +34,7 @@ export const TrapitoHistoria = () => {
               href="#packaging"
               className="inline-flex items-center gap-1 mt-8 font-inter text-sm font-medium text-oliva hover:text-oliva-oscuro transition-colors duration-200"
             >
-              Ver cómo llega tu regalo →
+              Regala un pedacito de México →
             </a>
           </div>
 
