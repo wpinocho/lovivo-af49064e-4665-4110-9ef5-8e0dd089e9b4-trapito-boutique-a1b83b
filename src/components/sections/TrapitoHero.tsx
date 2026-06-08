@@ -9,7 +9,7 @@ export const TrapitoHero = () => {
           {/* Text Column */}
           <div className="order-1 lg:order-1 max-w-xl">
             <p className="eyebrow text-oliva mb-5">
-              Babywear Mexicano · Lino + Algodón
+              Ropita de bebé con alma mexicana
             </p>
 
             <h1
