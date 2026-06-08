@@ -20,8 +20,7 @@ export const TrapitoHistoria = () => {
           <div className="order-1 lg:order-2">
             <p className="eyebrow text-oliva mb-5">Nuestra historia</p>
             <h2 className="font-fraunces text-[38px] md:text-[44px] text-tinta leading-tight tracking-[-0.02em] mb-7">
-              México suave,<br />
-              <em className="font-fraunces-italic font-light">para los más pequeños.</em>
+              México en la piel.
             </h2>
             <div className="space-y-5 max-w-[540px]">
               <p className="font-inter text-base text-tinta leading-[1.75]">
