@@ -33,6 +33,8 @@
 - Decisión pendiente del owner antes de implementar
 
 ## 4. Recent Changes
+- 2026-06-08 — TrapitoCategorias: clicks ahora hacen scroll suave a grupos por categoría en TrapitoProductos (productos-overoles / productos-conjuntos / productos-rompers). No más 404.
+- 2026-06-08 — TrapitoProductos: productos agrupados en 3 secciones con ID de ancla (overoles / conjuntos / rompers) y subheader por grupo.
 - 2026-06-08 — Todas las descripciones culturales de los 11 productos actualizadas (4 Kits + 3 Overoles + 4 Rompers). Cada producto tiene ahora 2-3 líneas de contexto cultural ajustado a su motivo. También eliminado "bordado a mano" del Romper Venado.
 - 2026-06-08 — Tagline del logo (TrapitoBrandLogo) actualizado a "ropa creada para ellos, pensada en tus raíces"
 - 2026-06-08 — Overol Jaguar renombrado a "Overol Tecuán" + descripción cultural de las máscaras de Tecuán

@@ -3,24 +3,32 @@ const categories = [
     name: 'Overoles',
     desc: 'Peto de lino con hombros ajustables y bordado artesanal al frente. Cómodos para gatear y explorar.',
     image: 'https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/2951759c-e79e-4fd2-b408-bf60182e438e/1780434644279-ljqrm7rcf2i.webp',
-    href: '/collections/overoles',
+    scrollId: 'productos-overoles',
     badge: '4 modelos',
   },
   {
     name: 'Conjuntos de lino',
     desc: 'Camisa henley con bloomer a juego. Bordados únicos adelante y atrás. El conjunto más completo de la colección.',
     image: 'https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/2951759c-e79e-4fd2-b408-bf60182e438e/1780434644279-svol4owvr5.webp',
-    href: '/collections/kit-camisa-y-shorts',
+    scrollId: 'productos-conjuntos',
     badge: '4 modelos',
   },
   {
     name: 'Rompers de lino',
     desc: 'Pelele sin manga con botones de nácar y bordado mexicano. Fresquito y fácil de poner.',
     image: 'https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/2951759c-e79e-4fd2-b408-bf60182e438e/1780434644279-mgic12rq78r.webp',
-    href: '/collections/rompers-de-lino',
+    scrollId: 'productos-rompers',
     badge: '4 modelos',
   },
 ];
+
+const scrollToSection = (id: string) => {
+  const el = document.getElementById(id);
+  if (!el) return;
+  const offset = 80; // header height
+  const top = el.getBoundingClientRect().top + window.scrollY - offset;
+  window.scrollTo({ top, behavior: 'smooth' });
+};
 
 export const TrapitoCategorias = () => {
   return (
@@ -41,10 +49,11 @@ export const TrapitoCategorias = () => {
         <div className="overflow-x-auto -mx-5 px-5 scrollbar-none md:overflow-visible md:mx-0 md:px-0">
           <div className="flex gap-5 pb-3 md:grid md:grid-cols-3 md:gap-8 md:pb-0">
             {categories.map((cat) => (
-              <a
+              <button
                 key={cat.name}
-                href={cat.href}
-                className="group block flex-none w-[78vw] sm:w-[56vw] md:w-auto"
+                type="button"
+                onClick={() => scrollToSection(cat.scrollId)}
+                className="group block flex-none w-[78vw] sm:w-[56vw] md:w-auto text-left cursor-pointer"
               >
                 {/* Image */}
                 <div className="relative aspect-[3/4] rounded-2xl overflow-hidden bg-lino mb-4">
@@ -65,7 +74,7 @@ export const TrapitoCategorias = () => {
                 <span className="font-inter text-sm font-medium text-oliva group-hover:text-oliva-oscuro transition-colors duration-200">
                   Ver colección →
                 </span>
-              </a>
+              </button>
             ))}
           </div>
         </div>
