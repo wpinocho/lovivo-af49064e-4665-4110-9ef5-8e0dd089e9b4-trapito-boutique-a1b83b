@@ -8,8 +8,8 @@ export const TrapitoHistoria = () => {
           <div className="order-2 lg:order-1">
             <div className="aspect-[4/5] rounded-3xl overflow-hidden bg-verde-tenue">
               <img
-                src="https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/product-images/af49064e-4665-4110-9ef5-8e0dd089e9b4/historia-bebe-overol.webp"
-                alt="Bebé de 8 meses sonriendo, sentado en cobija de lino, usando el Overol Tecuán azul marino con bordado mexicano — Trapito"
+                src="https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/2951759c-e79e-4fd2-b408-bf60182e438e/1780944021876-kni6bk94b2.webp"
+                alt="Bebé sonriendo de pie, usando el Overol Tecuán azul marino con bordado mexicano — Trapito"
                 className="w-full h-full object-cover"
                 loading="lazy"
               />

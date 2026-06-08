@@ -33,6 +33,8 @@
 - Decisión pendiente del owner antes de implementar
 
 ## 4. Recent Changes
+- 2026-06-08 — TrapitoHistoria: imagen reemplazada por foto real del usuario (bebé de pie, Overol Tecuán azul marino, sonriendo, con planta y canasto)
+- 2026-06-08 — TrapitoHistoria: título cambiado a "México en la piel."
 - 2026-06-08 — TrapitoHistoria: imagen actualizada a bebé 8 meses usando Overol Tecuán azul marino (foto editorial con plantas y cobija de lino)
 - 2026-06-08 — TrapitoProductos: corregida lógica de agrupamiento — Kits tienen tags:null, ahora se detectan por title.startsWith('kit'); Rompers por tag 'romper'. Las 3 secciones ahora muestran productos correctamente.
 - 2026-06-08 — TrapitoCategorias + TrapitoProductos: "Conjuntos de lino" renombrado a "Kits: bloomer y camisa de lino" para coincidir con la nomenclatura del usuario.
@@ -46,14 +48,12 @@
 - 2026-06-03 — Precios actualizados: 4 Kits $1,190 / 4 Overoles $990 / 4 Rompers $890
 - 2026-06-03 — TrapitoHistoria: imagen v4 generada CON 4 reference_images reales (Kit de chile)
 - 2026-06-02 — TrapitoPackaging: imagen de empaque reemplazada con nueva foto
-- 2026-06-02 — COMPLETADO: Eliminadas todas las menciones de "bordado a mano" en 3 archivos
-- 2026-06-02 — TrapitoCategorias: nuevas imágenes reales de las 3 categorías + "Sets kimono" renombrado a "Conjuntos de lino"
 
 ## 5. Image Inventory
 - Logo: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/temp_1779899822544_9bb8b9d3/1779899822544-i6kkb5mefds.png
 - **Hero baby (REAL PHOTO)**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/2951759c-e79e-4fd2-b408-bf60182e438e/1779985000373-sw44cedayzi.webp
-- **Historia Lifestyle v5 (bebé 8m + Overol Tecuán — ACTIVA)**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/product-images/af49064e-4665-4110-9ef5-8e0dd089e9b4/historia-bebe-overol.webp ✅ ACTIVA
-- **Historia Lifestyle v4 (deprecated)**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/product-images/af49064e-4665-4110-9ef5-8e0dd089e9b4/historia-lifestyle-v4.webp ❌ DEPRECATED
+- **Historia Lifestyle v6 (bebé de pie + Overol Tecuán — ACTIVA, FOTO REAL)**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/2951759c-e79e-4fd2-b408-bf60182e438e/1780944021876-kni6bk94b2.webp ✅ ACTIVA
+- **Historia Lifestyle v5 (deprecated)**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/product-images/af49064e-4665-4110-9ef5-8e0dd089e9b4/historia-bebe-overol.webp ❌ DEPRECATED
 - **Packaging (REAL PHOTO — nueva)**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/2951759c-e79e-4fd2-b408-bf60182e438e/1780441100857-hzp3nn512i4.webp
 - **Collection Overoles (REAL — new)**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/2951759c-e79e-4fd2-b408-bf60182e438e/1780434644279-ljqrm7rcf2i.webp
 - **Collection Conjuntos de lino (REAL — new)**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/2951759c-e79e-4fd2-b408-bf60182e438e/1780434644279-svol4owvr5.webp
