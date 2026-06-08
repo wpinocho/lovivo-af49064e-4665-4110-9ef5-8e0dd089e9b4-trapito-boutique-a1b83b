@@ -7,7 +7,7 @@
 - Market / region: México (CDMX, Monterrey, Guadalajara, Mérida). Envío nacional.
 - Tone & voice: Cálido, editorial, íntimo. No folclórico. No agresivo. Estética Konges Sløjd × Mi Golondrina × Liewood.
 - Key positioning bullets:
-  - "Babywear mexicano contemporáneo" — no souvenir, sí iconografía artesanal
+  - "Ropa creada para ellos, pensada en tus raíces" — tagline principal
   - Lino + algodón OEKO-TEX
   - Bordados con motivos de la tradición artesanal mexicana (NO son a mano — NO decir "bordado a mano")
   - Empaque de regalo premium incluido
@@ -33,16 +33,15 @@
 - Decisión pendiente del owner antes de implementar
 
 ## 4. Recent Changes
-- 2026-06-08 — Overol Jaguar renombrado a "Overol Tecuán" + descripción cultural de las máscaras de Tecuán (danza tradicional del sur de México)
+- 2026-06-08 — Todas las descripciones culturales de los 11 productos actualizadas (4 Kits + 3 Overoles + 4 Rompers). Cada producto tiene ahora 2-3 líneas de contexto cultural ajustado a su motivo. También eliminado "bordado a mano" del Romper Venado.
+- 2026-06-08 — Tagline del logo (TrapitoBrandLogo) actualizado a "ropa creada para ellos, pensada en tus raíces"
+- 2026-06-08 — Overol Jaguar renombrado a "Overol Tecuán" + descripción cultural de las máscaras de Tecuán
 - 2026-06-08 — Hero eyebrow cambiado a "Ropita de bebé con alma mexicana"
 - 2026-06-04 — Precios de VARIANTES corregidos en los 8 productos afectados: 4 Kits (variantes $1,190) + 4 Overoles (variantes $990). Bug: antes solo se actualizaba el precio del producto base, no el de las variantes; la PDP usaba precio de variante.
 - 2026-06-03 — Precios actualizados: 4 Kits $1,190 / 4 Overoles $990 / 4 Rompers $890 (ya estaban)
-- 2026-06-03 — TrapitoHistoria: imagen v4 generada CON 4 reference_images reales (Kit de chile) — bebé recién nacido en brazos de mamá, camisa crema con chile bordado en pecho, short verde sage con chile bordado, luz ventana perfecta, fondo lino crema
-- 2026-06-02 — TrapitoHistoria: imagen v3 generada CON reference_images reales (4 fotos Kit de chile) — bebé en lino verde con chile bordado visible en camisa Y short, manos mamá sobre sábana crema, luz ventana perfecta
-- 2026-06-02 — TrapitoHistoria: imagen v2 generada CON reference_images reales del Kit de chile — bebé despierto en brazos, conjunto verde+chile bordeado visible, luz ventana, match perfecto con producto real
-- 2026-06-02 — TrapitoHistoria: nueva imagen lifestyle (bebé dormido en conjunto lino verde+chile bordado, brazos mamá, luz natural)
-- 2026-06-02 — TrapitoPackaging: imagen de empaque reemplazada con nueva foto (conjunto lino crema+verde+chile bordado en caja abierta)
-- 2026-06-02 — COMPLETADO: Eliminadas todas las menciones de "bordado a mano" en 3 archivos (Hero badge, Hero alt, Historia copy+alt, PDP benefit bullet)
+- 2026-06-03 — TrapitoHistoria: imagen v4 generada CON 4 reference_images reales (Kit de chile)
+- 2026-06-02 — TrapitoPackaging: imagen de empaque reemplazada con nueva foto
+- 2026-06-02 — COMPLETADO: Eliminadas todas las menciones de "bordado a mano" en 3 archivos
 - 2026-06-02 — TrapitoCategorias: nuevas imágenes reales de las 3 categorías + "Sets kimono" renombrado a "Conjuntos de lino"
 - 2026-05-28 — TrapitoTestimonios: updated 3 testimonial texts to more natural/authentic copy
 - 2026-05-28 — PDP sticky bar: bg-tinta solid, single-row mobile (image+title+comprar/price)
@@ -51,8 +50,7 @@
 ## 5. Image Inventory
 - Logo: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/temp_1779899822544_9bb8b9d3/1779899822544-i6kkb5mefds.png
 - **Hero baby (REAL PHOTO)**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/2951759c-e79e-4fd2-b408-bf60182e438e/1779985000373-sw44cedayzi.webp
-- **Historia Lifestyle v4 (AI — CON 4 reference_images reales Kit de chile)**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/product-images/af49064e-4665-4110-9ef5-8e0dd089e9b4/historia-lifestyle-v4.webp — Bebé recién nacido en brazos mamá, camisa crema+chile bordado, short verde sage+chile bordado, luz ventana, lino crema. ✅ ACTIVA
-- **Historia Lifestyle v3 (DEPRECATED)**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/product-images/af49064e-4665-4110-9ef5-8e0dd089e9b4/historia-lifestyle-v3.webp ⚠️ Reemplazada por v4
+- **Historia Lifestyle v4 (AI — CON 4 reference_images reales Kit de chile)**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/product-images/af49064e-4665-4110-9ef5-8e0dd089e9b4/historia-lifestyle-v4.webp ✅ ACTIVA
 - **Packaging (REAL PHOTO — nueva)**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/2951759c-e79e-4fd2-b408-bf60182e438e/1780441100857-hzp3nn512i4.webp
 - **Collection Overoles (REAL — new)**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/2951759c-e79e-4fd2-b408-bf60182e438e/1780434644279-ljqrm7rcf2i.webp
 - **Collection Conjuntos de lino (REAL — new)**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/2951759c-e79e-4fd2-b408-bf60182e438e/1780434644279-svol4owvr5.webp
