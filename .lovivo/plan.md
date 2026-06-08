@@ -33,21 +33,20 @@
 - Decisión pendiente del owner antes de implementar
 
 ## 4. Recent Changes
+- 2026-06-08 — TrapitoProductos: corregida lógica de agrupamiento — Kits tienen tags:null, ahora se detectan por title.startsWith('kit'); Rompers por tag 'romper'. Las 3 secciones ahora muestran productos correctamente.
+- 2026-06-08 — TrapitoCategorias + TrapitoProductos: "Conjuntos de lino" renombrado a "Kits: bloomer y camisa de lino" para coincidir con la nomenclatura del usuario.
 - 2026-06-08 — TrapitoCategorias: clicks ahora hacen scroll suave a grupos por categoría en TrapitoProductos (productos-overoles / productos-conjuntos / productos-rompers). No más 404.
 - 2026-06-08 — TrapitoProductos: productos agrupados en 3 secciones con ID de ancla (overoles / conjuntos / rompers) y subheader por grupo.
-- 2026-06-08 — Todas las descripciones culturales de los 11 productos actualizadas (4 Kits + 3 Overoles + 4 Rompers). Cada producto tiene ahora 2-3 líneas de contexto cultural ajustado a su motivo. También eliminado "bordado a mano" del Romper Venado.
+- 2026-06-08 — Todas las descripciones culturales de los 11 productos actualizadas (4 Kits + 3 Overoles + 4 Rompers). Cada producto tiene ahora 2-3 líneas de contexto cultural ajustado a su motivo.
 - 2026-06-08 — Tagline del logo (TrapitoBrandLogo) actualizado a "ropa creada para ellos, pensada en tus raíces"
 - 2026-06-08 — Overol Jaguar renombrado a "Overol Tecuán" + descripción cultural de las máscaras de Tecuán
 - 2026-06-08 — Hero eyebrow cambiado a "Ropita de bebé con alma mexicana"
-- 2026-06-04 — Precios de VARIANTES corregidos en los 8 productos afectados: 4 Kits (variantes $1,190) + 4 Overoles (variantes $990). Bug: antes solo se actualizaba el precio del producto base, no el de las variantes; la PDP usaba precio de variante.
-- 2026-06-03 — Precios actualizados: 4 Kits $1,190 / 4 Overoles $990 / 4 Rompers $890 (ya estaban)
+- 2026-06-04 — Precios de VARIANTES corregidos en los 8 productos afectados: 4 Kits (variantes $1,190) + 4 Overoles (variantes $990).
+- 2026-06-03 — Precios actualizados: 4 Kits $1,190 / 4 Overoles $990 / 4 Rompers $890
 - 2026-06-03 — TrapitoHistoria: imagen v4 generada CON 4 reference_images reales (Kit de chile)
 - 2026-06-02 — TrapitoPackaging: imagen de empaque reemplazada con nueva foto
 - 2026-06-02 — COMPLETADO: Eliminadas todas las menciones de "bordado a mano" en 3 archivos
 - 2026-06-02 — TrapitoCategorias: nuevas imágenes reales de las 3 categorías + "Sets kimono" renombrado a "Conjuntos de lino"
-- 2026-05-28 — TrapitoTestimonios: updated 3 testimonial texts to more natural/authentic copy
-- 2026-05-28 — PDP sticky bar: bg-tinta solid, single-row mobile (image+title+comprar/price)
-- 2026-05-28 — PDP gallery mobile: full-bleed (-mx-6), reduced top padding, thumbnails with carousel API sync
 
 ## 5. Image Inventory
 - Logo: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/temp_1779899822544_9bb8b9d3/1779899822544-i6kkb5mefds.png
@@ -60,9 +59,10 @@
 - Products: All 12 products have individual multi-image galleries
 
 ## 6. Known Issues
-- 2026-05-27 — EcommerceTemplate header now has bg-crema — if homepage also renders it, may cause double header. But IndexUI wraps its own header, so EcommerceTemplate header is hidden on homepage. OK.
-- ⚠️ PROTOCOLO PRECIOS: Al actualizar precios, siempre actualizar TANTO `price` del producto COMO `variants_config` con los precios de cada variante. La PDP usa el precio de la variante; la landing usa el precio del producto.
-- ⚠️ PROTOCOLO IMAGEGEN: SIEMPRE usar ecommerce--list-data(type='products') primero + pasar reference_images reales al generar imágenes con productos. Sin referencia → imagen genérica que no se parece al producto.
+- ⚠️ TAGS KITS: Los 4 productos Kit (chile, cactus, escarabajo, milpa) tienen tags:null en la DB. El frontend los detecta por title.startsWith('kit'). Si se crean kits con otro naming, no se agruparán correctamente.
+- 2026-05-27 — EcommerceTemplate header now has bg-crema — if homepage also renders it, may cause double header. OK since IndexUI wraps its own header.
+- ⚠️ PROTOCOLO PRECIOS: Al actualizar precios, siempre actualizar TANTO `price` del producto COMO `variants_config` con los precios de cada variante.
+- ⚠️ PROTOCOLO IMAGEGEN: SIEMPRE usar ecommerce--list-data(type='products') primero + pasar reference_images reales al generar imágenes con productos.
 
 ## 7. Pending / Future Sessions
 - [high] Mejoras PDP: reseñas con fotos, sección unboxing, o historia de prenda (definir con owner)

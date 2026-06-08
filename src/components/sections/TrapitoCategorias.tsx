@@ -7,7 +7,7 @@ const categories = [
     badge: '4 modelos',
   },
   {
-    name: 'Conjuntos de lino',
+    name: 'Kits: bloomer y camisa',
     desc: 'Camisa henley con bloomer a juego. Bordados únicos adelante y atrás. El conjunto más completo de la colección.',
     image: 'https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/2951759c-e79e-4fd2-b408-bf60182e438e/1780434644279-svol4owvr5.webp',
     scrollId: 'productos-conjuntos',

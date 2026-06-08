@@ -18,19 +18,19 @@ const CATEGORY_GROUPS = [
     id: 'productos-overoles',
     label: 'Overoles',
     eyebrow: 'Peto de lino · 4 modelos',
-    match: (tags: string[]) => tags.includes('overol'),
+    match: (_tags: string[], title: string) => _tags.includes('overol'),
   },
   {
     id: 'productos-conjuntos',
-    label: 'Conjuntos de lino',
+    label: 'Kits: bloomer y camisa de lino',
     eyebrow: 'Camisa + bloomer · 4 modelos',
-    match: (tags: string[]) => tags.includes('kimono'),
+    match: (_tags: string[], title: string) => title.toLowerCase().startsWith('kit'),
   },
   {
     id: 'productos-rompers',
     label: 'Rompers de lino',
     eyebrow: 'Pelele sin manga · 4 modelos',
-    match: (tags: string[]) => !tags.includes('overol') && !tags.includes('kimono'),
+    match: (_tags: string[], title: string) => _tags.includes('romper'),
   },
 ];
 
@@ -47,7 +47,7 @@ function ProductCard({
   const images: string[] = (product as any).images ?? [];
   const image = images[0];
   const slug = (product as any).slug;
-  const material = tags.includes('kimono')
+  const material = product.title.toLowerCase().startsWith('kit')
     ? 'lino · conjunto'
     : tags.includes('overol')
     ? 'lino · overol'
@@ -136,7 +136,7 @@ export const TrapitoProductos = ({ logic }: TrapitoProductosProps) => {
           <div className="space-y-16 md:space-y-20">
             {CATEGORY_GROUPS.map((group) => {
               const groupProducts = filteredProducts.filter((p) =>
-                group.match((p as any).tags ?? [])
+                group.match((p as any).tags ?? [], p.title)
               );
               if (groupProducts.length === 0) return null;
 
