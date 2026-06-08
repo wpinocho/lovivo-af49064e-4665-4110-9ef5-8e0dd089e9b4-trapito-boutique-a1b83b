@@ -31,10 +31,10 @@ export const TrapitoHistoria = () => {
               </p>
             </div>
             <a
-              href="#"
+              href="#packaging"
               className="inline-flex items-center gap-1 mt-8 font-inter text-sm font-medium text-oliva hover:text-oliva-oscuro transition-colors duration-200"
             >
-              Conoce nuestro proceso →
+              Ver cómo llega tu regalo →
             </a>
           </div>
 
