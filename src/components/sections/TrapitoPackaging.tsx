@@ -12,13 +12,13 @@ export const TrapitoPackaging = () => {
               <em className="font-fraunces-italic font-light">desde la caja.</em>
             </h2>
             <p className="font-inter text-base text-crema/80 leading-[1.75] mb-8 max-w-[440px]">
-              Cada Trapito llega en una caja premium con papel seda estampado, sticker de marca, bolsita de manta y una tarjeta de agradecimiento. Sin envoltura extra, sin esfuerzo. Solo entregar.
+              Cada Trapito llega en una caja premium con papel seda estampado, sticker de marca, bolsita de manta y una tarjeta de agradecimiento. Cada detalle pensado para que lo entregues en caja o si te vas de viaje en la bolsa de manta.
             </p>
 
             {/* Bullet list */}
             <ul className="space-y-3 mb-10">
               {[
-                'Caja rígida con cierre magnético',
+                'Caja elegante',
                 'Papel seda con patrón mexicano',
                 'Tarjeta personalizable con tu mensaje',
                 'Bolsita de manta para reutilizar',
