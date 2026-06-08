@@ -33,6 +33,8 @@
 - Decisión pendiente del owner antes de implementar
 
 ## 4. Recent Changes
+- 2026-06-08 — Overol Jaguar renombrado a "Overol Tecuán" + descripción cultural de las máscaras de Tecuán (danza tradicional del sur de México)
+- 2026-06-08 — Hero eyebrow cambiado a "Ropita de bebé con alma mexicana"
 - 2026-06-04 — Precios de VARIANTES corregidos en los 8 productos afectados: 4 Kits (variantes $1,190) + 4 Overoles (variantes $990). Bug: antes solo se actualizaba el precio del producto base, no el de las variantes; la PDP usaba precio de variante.
 - 2026-06-03 — Precios actualizados: 4 Kits $1,190 / 4 Overoles $990 / 4 Rompers $890 (ya estaban)
 - 2026-06-03 — TrapitoHistoria: imagen v4 generada CON 4 reference_images reales (Kit de chile) — bebé recién nacido en brazos de mamá, camisa crema con chile bordado en pecho, short verde sage con chile bordado, luz ventana perfecta, fondo lino crema
@@ -45,18 +47,12 @@
 - 2026-05-28 — TrapitoTestimonios: updated 3 testimonial texts to more natural/authentic copy
 - 2026-05-28 — PDP sticky bar: bg-tinta solid, single-row mobile (image+title+comprar/price)
 - 2026-05-28 — PDP gallery mobile: full-bleed (-mx-6), reduced top padding, thumbnails with carousel API sync
-- 2026-05-28 — TrapitoRelatedProducts: full-bleed carousel on mobile (-mx-6 + pl-6), card peek with 70vw width
-- 2026-05-28 — TrapitoRelatedProducts: carousel + filtra por tipo de producto (romper/kimono/overol) + acepta productTags prop
-- 2026-05-28 — ProductPageUI: pasa productTags a TrapitoRelatedProducts para filtrar por colección real
 
 ## 5. Image Inventory
 - Logo: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/temp_1779899822544_9bb8b9d3/1779899822544-i6kkb5mefds.png
 - **Hero baby (REAL PHOTO)**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/2951759c-e79e-4fd2-b408-bf60182e438e/1779985000373-sw44cedayzi.webp
 - **Historia Lifestyle v4 (AI — CON 4 reference_images reales Kit de chile)**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/product-images/af49064e-4665-4110-9ef5-8e0dd089e9b4/historia-lifestyle-v4.webp — Bebé recién nacido en brazos mamá, camisa crema+chile bordado, short verde sage+chile bordado, luz ventana, lino crema. ✅ ACTIVA
 - **Historia Lifestyle v3 (DEPRECATED)**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/product-images/af49064e-4665-4110-9ef5-8e0dd089e9b4/historia-lifestyle-v3.webp ⚠️ Reemplazada por v4
-- **Historia Lifestyle v2 (DEPRECATED)**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/product-images/af49064e-4665-4110-9ef5-8e0dd089e9b4/historia-lifestyle-v2.webp ⚠️ Reemplazada por v3
-- **Historia Lifestyle v1 (DEPRECATED)**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/product-images/af49064e-4665-4110-9ef5-8e0dd089e9b4/historia-lifestyle.webp ⚠️ Sin referencia real
-- **Brand Story OLD (DEPRECATED)**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/product-images/af49064e-4665-4110-9ef5-8e0dd089e9b4/brand-story.webp ⚠️ Ya no se usa
 - **Packaging (REAL PHOTO — nueva)**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/2951759c-e79e-4fd2-b408-bf60182e438e/1780441100857-hzp3nn512i4.webp
 - **Collection Overoles (REAL — new)**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/2951759c-e79e-4fd2-b408-bf60182e438e/1780434644279-ljqrm7rcf2i.webp
 - **Collection Conjuntos de lino (REAL — new)**: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/2951759c-e79e-4fd2-b408-bf60182e438e/1780434644279-svol4owvr5.webp
