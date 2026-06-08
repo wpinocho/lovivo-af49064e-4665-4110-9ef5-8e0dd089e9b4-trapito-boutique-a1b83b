@@ -31,10 +31,10 @@ export const TrapitoPackaging = () => {
             </ul>
 
             <a
-              href="#"
+              href="#productos"
               className="inline-flex items-center justify-center px-7 py-3.5 bg-crema text-oliva font-inter font-medium text-sm tracking-wide rounded-sm hover:bg-crudo transition-colors duration-300"
             >
-              Personalizar tu regalo
+              Ver sets
             </a>
           </div>
 
