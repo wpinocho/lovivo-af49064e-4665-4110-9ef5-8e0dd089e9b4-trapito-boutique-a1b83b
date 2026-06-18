@@ -91,9 +91,19 @@ class TrackingUtility {
     };
   }
 
-  // Generate UUID for deduplication
-  private generateEventId(): string {
-    return crypto.randomUUID();
+  /**
+   * Generate a deterministic event_id so the same logical event (same order,
+   * same product, etc.) always produces the same id — even if it's fired
+   * multiple times from pixel + CAPI + retries + 3DS round-trip. Meta uses
+   * event_id to dedupe, so a stable id collapses duplicates into 1 conversion.
+   * Falls back to a UUID when no stable id is available.
+   */
+  private generateEventId(eventName: string = 'evt', stableId?: string): string {
+    const ev = eventName.toLowerCase();
+    if (stableId && String(stableId).length > 0) {
+      return `${ev}_${stableId}`;
+    }
+    return `${ev}_${crypto.randomUUID()}`;
   }
 
   // Get user data for CAPI
@@ -131,9 +141,10 @@ class TrackingUtility {
   private trackHybrid(
     eventName: string,
     browserParams: Record<string, any>,
-    customData: Record<string, any>
+    customData: Record<string, any>,
+    stableId?: string
   ): void {
-    const eventId = this.generateEventId();
+    const eventId = this.generateEventId(eventName, stableId);
 
     // 1. Browser Pixel (if available and initialized)
     if (this.pixelId) {
@@ -192,7 +203,8 @@ class TrackingUtility {
         content_category
       };
 
-      this.trackHybrid('ViewContent', browserParams, customData);
+      const vcStableId = products?.[0]?.id;
+      this.trackHybrid('ViewContent', browserParams, customData, vcStableId);
     } catch (error) {
       this.logError('ViewContent', error);
     }
@@ -223,7 +235,8 @@ class TrackingUtility {
         num_items: params.num_items || products.length
       };
 
-      this.trackHybrid('AddToCart', browserParams, customData);
+      const atcStableId = products?.[0]?.id;
+      this.trackHybrid('AddToCart', browserParams, customData, atcStableId);
     } catch (error) {
       this.logError('AddToCart', error);
     }
@@ -258,7 +271,8 @@ class TrackingUtility {
         num_items: browserParams.num_items
       };
 
-      this.trackHybrid('InitiateCheckout', browserParams, customData);
+      const icStableId = params.order_id || products?.[0]?.id;
+      this.trackHybrid('InitiateCheckout', browserParams, customData, icStableId);
     } catch (error) {
       this.logError('InitiateCheckout', error);
     }
@@ -290,7 +304,7 @@ class TrackingUtility {
         ...params.custom_parameters
       };
 
-      this.trackHybrid('Purchase', browserParams, customData);
+      this.trackHybrid('Purchase', browserParams, customData, order_id);
     } catch (error) {
       this.logError('Purchase', error);
     }
@@ -308,7 +322,7 @@ class TrackingUtility {
         return;
       }
 
-      const eventId = this.generateEventId();
+      const eventId = this.generateEventId('Search', search_string?.trim().toLowerCase());
       const browserParams = {
         search_string: search_string.trim(),
         ...(products && products.length > 0 && {
