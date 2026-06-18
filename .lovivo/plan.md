@@ -28,11 +28,167 @@
 - `.scrollbar-none` utility added to index.css (hide scrollbar for carousels)
 
 ## 3. Active Plan
-### Próximas mejoras PDP — PENDING
-- Propuestas: (1) Reseñas con fotos + estrellas, (2) sección "Así llega tu pedido", (3) historia de la prenda
-- Decisión pendiente del owner antes de implementar
+
+### FIX: Meta Pixel Duplicate Conversions — PENDING CRAFT MODE
+**Problem:** `generateEventId()` returns `crypto.randomUUID()` on every call. If `trackPurchase` fires twice for the same order (3DS redirect, double-click, Express Checkout + normal flow), Meta receives two events with different `event_id`s → not deduplicated → inflated purchases in Ads Manager.
+
+**Solution:** Two-layer fix proposed by developer:
+1. Make `event_id` deterministic per (eventName, stableId) in tracking-utils.ts
+2. Add sessionStorage guard before trackPurchase in payment components
+
+#### File 1: `src/lib/tracking-utils.ts`
+
+Replace `generateEventId()` (lines 94-97):
+```typescript
+/**
+ * Generate a deterministic event_id so the same logical event (same order,
+ * same product, etc.) always produces the same id — even if it's fired
+ * multiple times from pixel + CAPI + retries + 3DS round-trip. Meta uses
+ * event_id to dedupe, so a stable id collapses duplicates into 1 conversion.
+ * Falls back to a UUID when no stable id is available.
+ */
+private generateEventId(eventName: string = 'evt', stableId?: string): string {
+  const ev = eventName.toLowerCase();
+  if (stableId && String(stableId).length > 0) {
+    return `${ev}_${stableId}`;
+  }
+  return `${ev}_${crypto.randomUUID()}`;
+}
+```
+
+Replace `trackHybrid` signature + first line (lines 131-136):
+```typescript
+private trackHybrid(
+  eventName: string,
+  browserParams: Record<string, any>,
+  customData: Record<string, any>,
+  stableId?: string
+): void {
+  const eventId = this.generateEventId(eventName, stableId);
+```
+
+In `trackViewContent` (line 195), change:
+```typescript
+this.trackHybrid('ViewContent', browserParams, customData);
+```
+to:
+```typescript
+const vcStableId = products?.[0]?.id;
+this.trackHybrid('ViewContent', browserParams, customData, vcStableId);
+```
+
+In `trackAddToCart` (line 226), change:
+```typescript
+this.trackHybrid('AddToCart', browserParams, customData);
+```
+to:
+```typescript
+const atcStableId = products?.[0]?.id;
+this.trackHybrid('AddToCart', browserParams, customData, atcStableId);
+```
+
+In `trackInitiateCheckout` (line 261), change:
+```typescript
+this.trackHybrid('InitiateCheckout', browserParams, customData);
+```
+to:
+```typescript
+const icStableId = params.order_id || products?.[0]?.id;
+this.trackHybrid('InitiateCheckout', browserParams, customData, icStableId);
+```
+
+In `trackPurchase` (line 293), change:
+```typescript
+this.trackHybrid('Purchase', browserParams, customData);
+```
+to:
+```typescript
+this.trackHybrid('Purchase', browserParams, customData, order_id);
+```
+
+In `trackSearch` (line 311), change:
+```typescript
+const eventId = this.generateEventId();
+```
+to:
+```typescript
+const eventId = this.generateEventId('Search', search_string?.trim().toLowerCase());
+```
+
+#### File 2: `src/components/StripePayment.tsx`
+
+There are TWO trackPurchase call sites in this file:
+
+**Call site 1** (~line 388, inside `handlePayment`, `pi?.status === 'succeeded'`):
+Wrap the existing `trackPurchase({...})` call with sessionStorage guard:
+```typescript
+const ptKey = `purchase_tracked_${orderId}`;
+const alreadyTracked = (() => { try { return sessionStorage.getItem(ptKey) === '1'; } catch { return false; } })();
+if (!alreadyTracked) {
+  try { sessionStorage.setItem(ptKey, '1'); } catch {}
+  trackPurchase({
+    products: paymentItems.map((item: any) => tracking.createTrackingProduct({
+      id: item.product_id, title: item.product_name || item.title,
+      price: item.price / 100, category: 'product',
+      variant: item.variant_id ? { id: item.variant_id } : undefined
+    })),
+    value: totalCents / 100, currency: tracking.getCurrencyFromSettings(currency),
+    order_id: orderId,
+    custom_parameters: { payment_method: 'stripe', checkout_token: checkoutToken }
+  })
+}
+```
+
+**Call site 2** (~line 661, inside express checkout handler, `pi?.status === 'succeeded'`):
+Same sessionStorage guard pattern wrapping:
+```typescript
+const ptKey = `purchase_tracked_${orderId}`;
+const alreadyTracked = (() => { try { return sessionStorage.getItem(ptKey) === '1'; } catch { return false; } })();
+if (!alreadyTracked) {
+  try { sessionStorage.setItem(ptKey, '1'); } catch {}
+  trackPurchase({
+    products: paymentItems.map((item: any) => tracking.createTrackingProduct({
+      id: item.product_id, title: item.product_name || item.title,
+      price: item.price / 100, category: 'product',
+      variant: item.variant_id ? { id: item.variant_id } : undefined
+    })),
+    value: totalCents / 100, currency: tracking.getCurrencyFromSettings(currency),
+    order_id: orderId,
+    custom_parameters: { payment_method: 'express_checkout', checkout_token: checkoutToken }
+  })
+}
+```
+
+#### File 3: `src/components/ProductExpressCheckout.tsx`
+
+**Call site** (~line 428, `finalIntent?.status === 'succeeded'`):
+```typescript
+const ptKey = `purchase_tracked_${orderId}`;
+const alreadyTracked = (() => { try { return sessionStorage.getItem(ptKey) === '1'; } catch { return false; } })();
+if (!alreadyTracked) {
+  try { sessionStorage.setItem(ptKey, '1'); } catch {}
+  trackPurchase({
+    products: [tracking.createTrackingProduct({
+      id: product.id,
+      title: product.title,
+      price: unitPrice,
+      category: 'product',
+      variant,
+    })],
+    value: totalAmount,
+    currency: tracking.getCurrencyFromSettings(currencyCode),
+    order_id: orderId,
+    custom_parameters: { payment_method: 'payment_request_button', checkout_token: checkoutToken },
+  })
+}
+```
+
+**Risk level: LOW.** Changes are additive and surgical. PageView is intentionally NOT touched (keeps UUID behavior). sessionStorage guard is fail-safe (try/catch).
 
 ## 4. Recent Changes
+- 2026-06-18 — TrapitoPackaging: CTA "Personalizar tu regalo" → "Ver sets", now scrolls to products section
+- 2026-06-18 — TrapitoPackaging: description ending updated + "Caja rígida con cierre magnético" → "Caja elegante"
+- 2026-06-18 — TrapitoHistoria: CTA "Conoce nuestro proceso" → "Regala un pedacito de México", links to #packaging section
 - 2026-06-08 — TrapitoHistoria: imagen reemplazada por foto real del usuario (bebé de pie, Overol Tecuán azul marino, sonriendo, con planta y canasto)
 - 2026-06-08 — TrapitoHistoria: título cambiado a "México en la piel."
 - 2026-06-08 — TrapitoHistoria: imagen actualizada a bebé 8 meses usando Overol Tecuán azul marino (foto editorial con plantas y cobija de lino)
@@ -45,9 +201,6 @@
 - 2026-06-08 — Overol Jaguar renombrado a "Overol Tecuán" + descripción cultural de las máscaras de Tecuán
 - 2026-06-08 — Hero eyebrow cambiado a "Ropita de bebé con alma mexicana"
 - 2026-06-04 — Precios de VARIANTES corregidos en los 8 productos afectados: 4 Kits (variantes $1,190) + 4 Overoles (variantes $990).
-- 2026-06-03 — Precios actualizados: 4 Kits $1,190 / 4 Overoles $990 / 4 Rompers $890
-- 2026-06-03 — TrapitoHistoria: imagen v4 generada CON 4 reference_images reales (Kit de chile)
-- 2026-06-02 — TrapitoPackaging: imagen de empaque reemplazada con nueva foto
 
 ## 5. Image Inventory
 - Logo: https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/message-images/temp_1779899822544_9bb8b9d3/1779899822544-i6kkb5mefds.png
@@ -67,6 +220,7 @@
 - ⚠️ PROTOCOLO IMAGEGEN: SIEMPRE usar ecommerce--list-data(type='products') primero + pasar reference_images reales al generar imágenes con productos.
 
 ## 7. Pending / Future Sessions
+- [URGENT] Fix Meta duplicate conversions — deterministic event_id + sessionStorage guard (3 files: tracking-utils.ts, StripePayment.tsx, ProductExpressCheckout.tsx) — full spec in Active Plan above
 - [high] Mejoras PDP: reseñas con fotos, sección unboxing, o historia de prenda (definir con owner)
 - [high] Style Cart and Checkout pages with Trapito design
 - [med] Add scroll-triggered fade-in animations (Intersection Observer)
