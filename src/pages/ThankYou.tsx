@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Separator } from '@/components/ui/separator'
-import { CheckCircle, Package, Mail, ArrowLeft, ShoppingBag } from 'lucide-react'
+import { CheckCircle, Package, Mail, ArrowLeft, ShoppingBag, Truck } from 'lucide-react'
 import { formatMoney } from '@/lib/money'
 import { EcommerceTemplate } from '@/templates/EcommerceTemplate'
 import { SEO } from '@/components/SEO'
@@ -34,6 +34,7 @@ const ThankYou = () => {
   const { clearCart } = useCart()
   const [order, setOrder] = useState<OrderDetails | null>(null)
   const [loading, setLoading] = useState(true)
+  const [trackToken, setTrackToken] = useState<string | null>(null)
   const hydratedRef = useRef(false)
 
   useEffect(() => {
@@ -82,6 +83,7 @@ const ThankYou = () => {
         if (raw) {
           const parsed = JSON.parse(raw)
           checkoutToken = parsed?.checkout_token
+          if (checkoutToken) setTrackToken(checkoutToken)
           if (parsed?.order && (!orderId || parsed.order_id === orderId || parsed.order.id === orderId)) {
             const snap = parsed.order as OrderDetails
             persist(snap)
@@ -321,6 +323,14 @@ const ThankYou = () => {
 
         {/* Action Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
+          {trackToken && (
+            <Button asChild className="bg-oliva hover:bg-oliva-oscuro text-crema rounded-sm">
+              <Link to={`/orders/track/${trackToken}`} className="flex items-center gap-2">
+                <Truck className="w-4 h-4" />
+                Rastrear mi pedido
+              </Link>
+            </Button>
+          )}
           <Button asChild variant="outline">
             <Link to="/" className="flex items-center gap-2">
               <ArrowLeft className="w-4 h-4" />

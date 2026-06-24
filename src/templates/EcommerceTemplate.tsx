@@ -77,6 +77,12 @@ export const EcommerceTemplate = ({
               >
                 Blog
               </Link>
+              <Link 
+                to="/orders/track"
+                className="font-inter text-sm text-tinta-suave hover:text-tinta transition-colors"
+              >
+                Rastrear pedido
+              </Link>
             </nav>
           </div>
 
@@ -123,7 +129,7 @@ export const EcommerceTemplate = ({
           <div>
             <BrandLogoLeft />
             <p className="mt-4 font-inter text-sm text-crema/60 leading-relaxed">
-              Ropa de bebé mexicana contemporánea.<br/>Lino y algodón natural, bordado a mano.
+              Ropa de bebé mexicana contemporánea.<br/>Lino y algodón natural OEKO-TEX.
             </p>
           </div>
 

@@ -13,7 +13,7 @@ import { Button } from '@/components/ui/button'
 import { Skeleton } from '@/components/ui/skeleton'
 import { AuthDialog } from '@/components/AuthDialog'
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible'
-import { Package, Calendar, RefreshCw, ShoppingBag, AlertCircle, LogIn, ChevronDown, MapPin, Tag } from 'lucide-react'
+import { Package, Calendar, RefreshCw, ShoppingBag, AlertCircle, LogIn, ChevronDown, MapPin, Tag, Truck, ExternalLink, CalendarDays } from 'lucide-react'
 import { formatMoney } from '@/lib/money'
 import { format } from 'date-fns'
 import { es } from 'date-fns/locale'
@@ -214,6 +214,42 @@ function OrderCard({ order }: { order: any }) {
                     <p className="text-sm">{address}</p>
                   </div>
                 </div>
+              </div>
+            )}
+
+            {/* Tracking CTA */}
+            {(order.checkout_token || order.tracking_number || order.estimated_delivery_at) && (
+              <div className="border-t pt-3 flex flex-wrap items-center gap-2">
+                {order.checkout_token && (
+                  <Button
+                    size="sm"
+                    className="bg-oliva hover:bg-oliva-oscuro text-crema rounded-sm font-inter text-xs h-8"
+                    onClick={() => navigate(`/orders/track/${order.checkout_token}`)}
+                  >
+                    <Truck className="h-3.5 w-3.5 mr-1.5" />
+                    Rastrear pedido
+                  </Button>
+                )}
+                {order.tracking_url && (
+                  <Button
+                    size="sm"
+                    variant="outline"
+                    asChild
+                    className="rounded-sm border-lino font-inter text-xs h-8"
+                  >
+                    <a href={order.tracking_url} target="_blank" rel="noopener noreferrer">
+                      <ExternalLink className="h-3.5 w-3.5 mr-1.5" />
+                      Ver en la paquetería
+                    </a>
+                  </Button>
+                )}
+                {order.estimated_delivery_at && (
+                  <span className="font-inter text-xs text-tinta-suave flex items-center gap-1 ml-auto">
+                    <CalendarDays className="h-3 w-3 text-oliva" />
+                    Entrega est.:{' '}
+                    {format(new Date(order.estimated_delivery_at), "d MMM yyyy", { locale: es })}
+                  </span>
+                )}
               </div>
             )}
           </div>
